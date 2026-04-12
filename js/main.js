@@ -180,48 +180,33 @@
 
 
   /* ═══════════════════════════════════════
-     OVERLAPPING TRANSITION — Scroll-driven
-     Each panel layer shifts its clip-path
-     at a different rate as you scroll,
-     creating a parallax color overlap.
+     RISING COLOR MORPH — Scroll-driven
+     The gradient rises upward as you
+     scroll through each transition zone,
+     diluting the previous section's color.
      ═══════════════════════════════════════ */
-  var overlaps = document.querySelectorAll('.section-overlap');
+  var morphs = document.querySelectorAll('.color-morph');
 
-  function updateOverlaps() {
+  function updateMorphs() {
     var vh = window.innerHeight;
-
-    overlaps.forEach(function (el) {
+    morphs.forEach(function (el) {
       var rect = el.getBoundingClientRect();
       var height = el.offsetHeight;
-
-      /* How far through the transition (0 = just entering bottom, 1 = exiting top) */
+      /* 0 = bottom of zone at viewport bottom, 1 = top of zone at viewport top */
       var progress = 1 - (rect.bottom / (vh + height));
       progress = Math.max(0, Math.min(progress, 1));
-
-      var layers = el.querySelectorAll('.section-overlap__layer');
-
-      layers.forEach(function (layer, i) {
-        /* Each layer shifts its diagonal cut by a different amount based on scroll */
-        var speed = 1 - (i / layers.length);  /* layer 1 moves most, last moves least */
-        var shift = progress * 35 * speed;     /* max 35% shift */
-
-        /* Base clip positions per layer */
-        var baseTopRight = 30 + i * 12;
-        var baseBottomLeft = 55 + i * 7;
-
-        /* Scroll shifts the bottom edge up and top-right edge down */
-        var topRight = baseTopRight + shift;
-        var bottomLeft = baseBottomLeft - shift * 0.6;
-
-        layer.style.clipPath =
-          'polygon(0 0, 100% 0, 100% ' + topRight + '%, 0 ' + bottomLeft + '%)';
-      });
+      /* Move the rising gradient from bottom (-100%) to covering the zone (0%) */
+      var rising = el.querySelector('.color-morph__rising');
+      if (rising) {
+        var shift = progress * 100; /* 0% to 100% upward */
+        rising.style.transform = 'translateY(-' + shift + '%)';
+      }
     });
   }
 
   window.addEventListener('scroll', function () {
-    requestAnimationFrame(updateOverlaps);
+    requestAnimationFrame(updateMorphs);
   }, { passive: true });
-  updateOverlaps();
+  updateMorphs();
 
 })();

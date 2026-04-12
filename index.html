@@ -182,78 +182,165 @@
     </section>
 
 
-    <!-- ── TRANSITION 1: Dark → Light (overlapping panels) ── -->
-    <div class="section-overlap" data-from="dark" aria-hidden="true">
-      <div class="section-overlap__layer section-overlap__layer--1" style="background:#2d0a4e;"></div>
-      <div class="section-overlap__layer section-overlap__layer--2" style="background:#581c87;"></div>
-      <div class="section-overlap__layer section-overlap__layer--3" style="background:#7e22ce;"></div>
-      <div class="section-overlap__layer section-overlap__layer--4" style="background:#a855f7;"></div>
-      <div class="section-overlap__layer section-overlap__layer--5" style="background:#d8b4fe;"></div>
-      <div class="section-overlap__layer section-overlap__layer--6" style="background:#f3e8ff;"></div>
-      <div class="section-overlap__glow section-overlap__glow--1"></div>
-      <div class="section-overlap__glow section-overlap__glow--2"></div>
+    <!-- ── TRANSITION 1: Dark → Light (rising color morph) ── -->
+    <div class="color-morph" aria-hidden="true">
+      <div class="color-morph__from" style="background:#1a0533;"></div>
+      <div class="color-morph__rising" style="background:linear-gradient(to top, #faf5ff 0%, #e9d5ff 25%, #c084fc 50%, #7e22ce 75%, transparent 100%);"></div>
     </div>
 
 
     <!-- ══════════════════════════════════
-         SECTION 2 — PRODUCTS
+         SECTION 2 — PRODUCTS (Lux Tutor)
          ══════════════════════════════════ -->
     <section id="products" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-24" style="background:linear-gradient(180deg,#faf5ff,#fff,#faf5ff);">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto">
 
-        <div class="text-center mb-16 scroll-reveal">
-          <span class="eyebrow">What We Build</span>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3" style="font-family:'Playfair Display',serif;">Solutions That <span class="text-purple-600">Transform</span></h2>
+        <!-- Header -->
+        <div class="text-center mb-6 scroll-reveal">
+          <span class="eyebrow">Featured Product</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3" style="font-family:'Playfair Display',serif;">Lux <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Tutor</span></h2>
+          <p class="text-gray-500 max-w-xl mx-auto mt-4 text-sm sm:text-base leading-relaxed" style="font-family:'DM Sans',sans-serif;">An AI-powered tutoring platform that personalises learning for every student across Africa.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger="100">
+        <!-- App mockup showcase -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-14" data-stagger="150">
 
-          <div class="product-card stagger-child scroll-reveal">
-            <div class="product-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><defs><linearGradient id="pcGrad" x1="0" y1="24" x2="24" y2="0"><stop stop-color="#7e22ce"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><path d="M12 20V10M6 20V4M18 20v-6"/></svg>
+          <!-- Card 1: Dashboard -->
+          <div class="app-mockup stagger-child scroll-reveal">
+            <div class="app-mockup__screen">
+              <div class="app-mockup__bar">
+                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
+                <span class="app-mockup__dot" style="background:#febc2e;"></span>
+                <span class="app-mockup__dot" style="background:#28c840;"></span>
+                <span class="app-mockup__bar-title">Dashboard</span>
+              </div>
+              <div class="app-mockup__body" style="padding:1.2rem;">
+                <p class="text-xs font-semibold text-gray-800" style="font-family:'DM Sans',sans-serif;">Good morning, Tadiwa</p>
+                <p class="text-[10px] text-gray-400 mt-0.5">Your Tutor &bull; Medicine</p>
+                <div class="flex gap-3 mt-3">
+                  <div class="flex-1 rounded-lg bg-blue-50 p-2 text-center"><span class="text-lg font-bold text-blue-600">0</span><br><span class="text-[9px] text-gray-400">Saved</span></div>
+                  <div class="flex-1 rounded-lg bg-blue-50 p-2 text-center"><span class="text-lg font-bold text-blue-600">0</span><br><span class="text-[9px] text-gray-400">Streak</span></div>
+                  <div class="flex-1 rounded-lg bg-blue-50 p-2 text-center"><span class="text-lg font-bold text-blue-600">25%</span><br><span class="text-[9px] text-gray-400">Progress</span></div>
+                </div>
+                <div class="mt-3 rounded-lg bg-gray-50 p-2">
+                  <p class="text-[10px] font-semibold text-gray-700">Today's goals</p>
+                  <div class="flex items-center gap-1.5 mt-1"><div class="w-2.5 h-2.5 rounded-full bg-blue-400"></div><span class="text-[9px] text-gray-500">Complete a study session</span></div>
+                  <div class="flex items-center gap-1.5 mt-1"><div class="w-2.5 h-2.5 rounded-full bg-gray-200"></div><span class="text-[9px] text-gray-500">Maintain your study streak</span></div>
+                </div>
+              </div>
             </div>
-            <h3 class="product-card__title">AI-Powered Analytics</h3>
-            <p class="product-card__body">Transform raw data into actionable intelligence with our machine learning pipelines and real-time dashboards.</p>
+            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">Smart Dashboard</h3>
+            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Track goals, streaks, and learning progress with a personalised overview.</p>
           </div>
 
-          <div class="product-card stagger-child scroll-reveal">
-            <div class="product-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <!-- Card 2: Study Prep -->
+          <div class="app-mockup stagger-child scroll-reveal">
+            <div class="app-mockup__screen">
+              <div class="app-mockup__bar">
+                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
+                <span class="app-mockup__dot" style="background:#febc2e;"></span>
+                <span class="app-mockup__dot" style="background:#28c840;"></span>
+                <span class="app-mockup__bar-title">Study Prep</span>
+              </div>
+              <div class="app-mockup__body" style="padding:1.2rem;">
+                <p class="text-[10px] text-center text-gray-400 mb-1">Choose your study mode</p>
+                <p class="text-xs font-bold text-center text-gray-800 mb-3" style="font-family:'Playfair Display',serif;">Study Prep</p>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="rounded-lg border border-gray-100 p-3 bg-white hover:shadow-md transition-shadow">
+                    <div class="w-6 h-6 rounded bg-blue-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                    <p class="text-[10px] font-semibold text-gray-800">Presentation</p>
+                    <p class="text-[8px] text-gray-400">Study slides</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 p-3 bg-white">
+                    <div class="w-6 h-6 rounded bg-orange-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
+                    <p class="text-[10px] font-semibold text-gray-800">Podcast</p>
+                    <p class="text-[8px] text-gray-400">Listen & learn</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 p-3 bg-white">
+                    <div class="w-6 h-6 rounded bg-green-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 4v16"/></svg></div>
+                    <p class="text-[10px] font-semibold text-gray-800">Flashcards</p>
+                    <p class="text-[8px] text-gray-400">Test knowledge</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 p-3 bg-white">
+                    <div class="w-6 h-6 rounded bg-purple-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+                    <p class="text-[10px] font-semibold text-gray-800">Diagram</p>
+                    <p class="text-[8px] text-gray-400">Visualise concepts</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="product-card__title">Custom Software</h3>
-            <p class="product-card__body">Bespoke applications engineered for your workflows — from mobile apps to enterprise platforms.</p>
+            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">Multi-Mode Study Prep</h3>
+            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Presentations, podcasts, flashcards, and diagrams — learn any way you want.</p>
           </div>
 
-          <div class="product-card stagger-child scroll-reveal">
-            <div class="product-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <!-- Card 3: AI Chat -->
+          <div class="app-mockup stagger-child scroll-reveal">
+            <div class="app-mockup__screen">
+              <div class="app-mockup__bar">
+                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
+                <span class="app-mockup__dot" style="background:#febc2e;"></span>
+                <span class="app-mockup__dot" style="background:#28c840;"></span>
+                <span class="app-mockup__bar-title">Lux Chat</span>
+              </div>
+              <div class="app-mockup__body flex flex-col items-center justify-center" style="padding:2rem 1.2rem;">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-3">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <p class="text-sm font-bold text-gray-800 text-center" style="font-family:'Playfair Display',serif;">What can I help you study?</p>
+                <div class="w-full mt-4 rounded-full bg-gray-100 px-4 py-2 flex items-center gap-2">
+                  <span class="text-gray-300 text-xs">+</span>
+                  <span class="text-[10px] text-gray-400 flex-1">Ask anything</span>
+                  <span class="text-[8px] font-bold text-white bg-gray-900 rounded px-1.5 py-0.5">Fast</span>
+                </div>
+                <div class="flex gap-3 mt-3">
+                  <span class="text-[8px] text-gray-400">Visuals</span>
+                  <span class="text-[8px] text-gray-400">Podcast</span>
+                  <span class="text-[8px] text-gray-400">Exam</span>
+                  <span class="text-[8px] text-gray-400">Clear</span>
+                </div>
+              </div>
             </div>
-            <h3 class="product-card__title">Workflow Automation</h3>
-            <p class="product-card__body">Eliminate manual bottlenecks with intelligent process automation that learns and adapts.</p>
+            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">AI Tutor Chat</h3>
+            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Ask any question and get instant, personalised explanations powered by AI.</p>
           </div>
 
-          <div class="product-card stagger-child scroll-reveal">
-            <div class="product-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M22 12H2M22 12a10 10 0 11-20 0 10 10 0 0120 0zM12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+          <!-- Card 4: Community -->
+          <div class="app-mockup stagger-child scroll-reveal">
+            <div class="app-mockup__screen">
+              <div class="app-mockup__bar">
+                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
+                <span class="app-mockup__dot" style="background:#febc2e;"></span>
+                <span class="app-mockup__dot" style="background:#28c840;"></span>
+                <span class="app-mockup__bar-title">Community</span>
+              </div>
+              <div class="app-mockup__body" style="padding:1rem;">
+                <div class="flex gap-2 mb-3 justify-center">
+                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">Feed</span>
+                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-blue-500 text-white font-semibold">People</span>
+                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">Messages</span>
+                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">Groups</span>
+                </div>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2 rounded-lg bg-white border border-gray-100 p-2">
+                    <div class="w-7 h-7 rounded-full bg-gray-300 flex items-center justify-center text-[8px] font-bold text-white">A</div>
+                    <div class="flex-1"><p class="text-[9px] font-semibold text-gray-800">Areto</p><p class="text-[7px] text-gray-400">Student &bull; A Level</p></div>
+                    <span class="text-[7px] px-1.5 py-0.5 rounded bg-blue-500 text-white">Add</span>
+                  </div>
+                  <div class="flex items-center gap-2 rounded-lg bg-white border border-gray-100 p-2">
+                    <div class="w-7 h-7 rounded-full bg-blue-400 flex items-center justify-center text-[8px] font-bold text-white">CM</div>
+                    <div class="flex-1"><p class="text-[9px] font-semibold text-gray-800">Chalse Morgan</p><p class="text-[7px] text-gray-400">Facilitator &bull; O Level</p></div>
+                    <span class="text-[7px] px-1.5 py-0.5 rounded bg-blue-500 text-white">Add</span>
+                  </div>
+                  <div class="flex items-center gap-2 rounded-lg bg-white border border-gray-100 p-2">
+                    <div class="w-7 h-7 rounded-full bg-gray-500 flex items-center justify-center text-[8px] font-bold text-white">WM</div>
+                    <div class="flex-1"><p class="text-[9px] font-semibold text-gray-800">Wil Manwere</p><p class="text-[7px] text-gray-400">Student &bull; University</p></div>
+                    <span class="text-[7px] px-1.5 py-0.5 rounded bg-blue-500 text-white">Add</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="product-card__title">Cloud Architecture</h3>
-            <p class="product-card__body">Scalable, secure cloud infrastructure designed for African market conditions and growth.</p>
-          </div>
-
-          <div class="product-card stagger-child scroll-reveal">
-            <div class="product-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M21 5v14c0 1.66-4 3-9 3s-9-1.34-9-3V5"/></svg>
-            </div>
-            <h3 class="product-card__title">Data Engineering</h3>
-            <p class="product-card__body">Robust data pipelines that collect, clean, and organize your most valuable asset.</p>
-          </div>
-
-          <div class="product-card stagger-child scroll-reveal">
-            <div class="product-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            </div>
-            <h3 class="product-card__title">AI Chatbots</h3>
-            <p class="product-card__body">Conversational AI that handles customer support, sales, and operations around the clock.</p>
+            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">Learning Community</h3>
+            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Connect with students, facilitators, and study groups across Africa.</p>
           </div>
 
         </div>
@@ -261,16 +348,10 @@
     </section>
 
 
-    <!-- ── TRANSITION 2: Light → Dark (overlapping panels) ── -->
-    <div class="section-overlap" data-from="light" aria-hidden="true">
-      <div class="section-overlap__layer section-overlap__layer--1" style="background:#f3e8ff;"></div>
-      <div class="section-overlap__layer section-overlap__layer--2" style="background:#d8b4fe;"></div>
-      <div class="section-overlap__layer section-overlap__layer--3" style="background:#a855f7;"></div>
-      <div class="section-overlap__layer section-overlap__layer--4" style="background:#7e22ce;"></div>
-      <div class="section-overlap__layer section-overlap__layer--5" style="background:#581c87;"></div>
-      <div class="section-overlap__layer section-overlap__layer--6" style="background:#2d0a4e;"></div>
-      <div class="section-overlap__glow section-overlap__glow--1"></div>
-      <div class="section-overlap__glow section-overlap__glow--2"></div>
+    <!-- ── TRANSITION 2: Light → Dark (rising color morph) ── -->
+    <div class="color-morph" aria-hidden="true">
+      <div class="color-morph__from" style="background:#faf5ff;"></div>
+      <div class="color-morph__rising" style="background:linear-gradient(to top, #1a0533 0%, #2d0a4e 25%, #581c87 50%, #7e22ce 75%, transparent 100%);"></div>
     </div>
 
 
@@ -322,16 +403,10 @@
     </section>
 
 
-    <!-- ── TRANSITION 3: Dark → Light (overlapping panels) ── -->
-    <div class="section-overlap" data-from="dark" aria-hidden="true">
-      <div class="section-overlap__layer section-overlap__layer--1" style="background:#2d0a4e;"></div>
-      <div class="section-overlap__layer section-overlap__layer--2" style="background:#581c87;"></div>
-      <div class="section-overlap__layer section-overlap__layer--3" style="background:#7e22ce;"></div>
-      <div class="section-overlap__layer section-overlap__layer--4" style="background:#a855f7;"></div>
-      <div class="section-overlap__layer section-overlap__layer--5" style="background:#d8b4fe;"></div>
-      <div class="section-overlap__layer section-overlap__layer--6" style="background:#f3e8ff;"></div>
-      <div class="section-overlap__glow section-overlap__glow--1"></div>
-      <div class="section-overlap__glow section-overlap__glow--2"></div>
+    <!-- ── TRANSITION 3: Dark → Light (rising color morph) ── -->
+    <div class="color-morph" aria-hidden="true">
+      <div class="color-morph__from" style="background:#1a0533;"></div>
+      <div class="color-morph__rising" style="background:linear-gradient(to top, #faf5ff 0%, #e9d5ff 25%, #c084fc 50%, #7e22ce 75%, transparent 100%);"></div>
     </div>
 
 
