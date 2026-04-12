@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rylo Labs</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,7 +21,6 @@
     }
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -32,85 +30,75 @@
 </head>
 <body>
 
-  <!-- ═══ PUZZLE SCROLL BACKGROUND ═══ -->
-  <img id="puzzleFrame" class="fixed inset-0" style="z-index:0;" alt="" draggable="false" />
-  <div id="puzzleOverlay" class="fixed inset-0 pointer-events-none" style="z-index:1; background: radial-gradient(ellipse at center, rgba(40,10,65,0.1) 0%, rgba(20,5,40,0.25) 100%);"></div>
+  <!-- ═══ FIXED PURPLE BACKGROUND ═══ -->
+  <div class="fixed inset-0" style="z-index:0;">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#1a0533] via-[#2d0a4e] to-[#1a0533]"></div>
+    <div class="orb absolute w-[600px] h-[600px] rounded-full bg-purple-700/20 blur-[120px] -top-40 -right-40 animate-float-slow"></div>
+    <div class="orb absolute w-[400px] h-[400px] rounded-full bg-purple-600/15 blur-[100px] bottom-0 left-[-10%] animate-float-mid"></div>
+    <div class="orb absolute w-[300px] h-[300px] rounded-full bg-violet-500/10 blur-[80px] top-1/2 left-1/2 animate-float-fast"></div>
+  </div>
 
   <!-- ═══════ NAVBAR ═══════ -->
   <nav id="navbar" class="topnav topnav--dark fixed top-0 left-0 right-0 z-50">
     <div class="topnav__inner">
-      <!-- Logo -->
-      <a href="index.html" class="topnav__logo">
+      <a href="#home" class="topnav__logo">
         <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;">.</span>
       </a>
-
-      <!-- Center links -->
       <div class="topnav__links">
-        <a href="index.html" class="topnav__link active">Home</a>
-        <a href="products.html" class="topnav__link">Products</a>
-        <a href="about.html" class="topnav__link">About</a>
-        <a href="contact.html" class="topnav__link">Contact</a>
+        <a href="#home" class="topnav__link active">Home</a>
+        <a href="#products" class="topnav__link">Products</a>
+        <a href="#about" class="topnav__link">About</a>
+        <a href="#contact" class="topnav__link">Contact</a>
       </div>
-
-      <!-- Hamburger (mobile) -->
       <button class="topnav__burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-
-      <!-- Right actions -->
       <div class="topnav__actions">
-        <a href="contact.html" class="topnav__cta">Get Started</a>
+        <a href="#contact" class="topnav__cta">Get Started</a>
       </div>
     </div>
-
-    <!-- Animated gradient separator line -->
     <div class="topnav__line" aria-hidden="true"></div>
   </nav>
 
 
   <!-- ═══════════════════════════════════════════
-       SCROLLABLE CONTENT
+       SINGLE-PAGE SCROLLABLE CONTENT
        ═══════════════════════════════════════════ -->
   <main class="relative" style="z-index:5;">
 
-    <!-- ── SECTION 1 : HERO (scroll-driven puzzle background) ── -->
-    <section class="puzzle-hero relative">
-      <div class="puzzle-hero__sticky px-8 sm:px-12 md:px-20 lg:px-28">
-
+    <!-- ══════════════════════════════════
+         SECTION 1 — HERO
+         ══════════════════════════════════ -->
+    <section id="home" class="hero-section relative px-8 sm:px-12 md:px-20 lg:px-28">
       <div id="hero" class="select-none text-center max-w-3xl mx-auto">
 
-        <!-- Logo row: flask + Rylo Labs -->
         <div class="hero-line overflow-hidden flex justify-center">
           <div id="heroTitle" class="hero-reveal hero-title-row">
             <svg class="hero-flask" width="52" height="68" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="heroFlaskGrad" x1="10" y1="64" x2="38" y2="0" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#7e22ce"/>
-                  <stop offset="50%" stop-color="#9333ea"/>
-                  <stop offset="100%" stop-color="#a855f7"/>
+                  <stop offset="0%" stop-color="#c084fc"/>
+                  <stop offset="50%" stop-color="#d8b4fe"/>
+                  <stop offset="100%" stop-color="#e9d5ff"/>
                 </linearGradient>
               </defs>
               <path d="M19 6v18L6 54c-2 4 1 8 5 8h26c4 0 7-4 5-8L29 24V6" stroke="url(#heroFlaskGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               <path d="M16 6h16" stroke="url(#heroFlaskGrad)" stroke-width="2.5" stroke-linecap="round"/>
               <path d="M9 48q15-7 30 0l3 6c2 4-1 8-5 8H11c-4 0-7-4-5-8z" fill="url(#heroFlaskGrad)" opacity="0.18"/>
-              <circle cx="19" cy="50" r="2" fill="url(#heroFlaskGrad)" opacity="0.35"/>
-              <circle cx="28" cy="46" r="1.5" fill="url(#heroFlaskGrad)" opacity="0.25"/>
-              <circle cx="23" cy="42" r="1" fill="url(#heroFlaskGrad)" opacity="0.2"/>
               <circle class="flask-bubble flask-bubble--1" cx="22" cy="-2" r="2" stroke="url(#heroFlaskGrad)" stroke-width="1.2" fill="none" opacity="0.35"/>
               <circle class="flask-bubble flask-bubble--2" cx="28" cy="-8" r="1.5" stroke="url(#heroFlaskGrad)" stroke-width="1" fill="none" opacity="0.25"/>
               <circle class="flask-bubble flask-bubble--3" cx="24" cy="-15" r="1" stroke="url(#heroFlaskGrad)" stroke-width="0.8" fill="none" opacity="0.18"/>
             </svg>
-            <span class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-black" style="font-family:'Playfair Display',serif;">Rylo <span class="font-bold text-purple-700">Labs</span></span>
+            <span class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white" style="font-family:'Playfair Display',serif;">Rylo <span class="font-bold text-purple-300">Labs</span></span>
           </div>
         </div>
 
         <div class="overflow-hidden mt-4 mb-3 flex justify-center">
-          <div id="heroLine" class="hero-accent-line w-14 h-[2px] bg-gradient-to-r from-purple-500 to-purple-300" style="transform-origin:center;"></div>
+          <div id="heroLine" class="hero-accent-line w-14 h-[2px] bg-gradient-to-r from-purple-400 to-purple-600" style="transform-origin:center;"></div>
         </div>
 
-        <!-- Primary tagline -->
         <div id="heroTagline">
-          <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-extrabold leading-snug text-black" style="font-family:'DM Sans',sans-serif;">
+          <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-white/90" style="font-family:'DM Sans',sans-serif;">
             <span class="hero-word">Pioneering</span>
             <span class="hero-word">the</span>
             <span class="hero-word">Next</span>
@@ -122,14 +110,10 @@
           </p>
         </div>
 
-        <!-- Extended description -->
-        <div id="heroSub" class="mt-1.5">
-          <p class="text-base sm:text-lg md:text-xl font-extrabold leading-relaxed text-black" style="font-family:'DM Sans',sans-serif;">
+        <div id="heroSub" class="mt-2">
+          <p class="text-base sm:text-lg font-light leading-relaxed text-purple-200/70" style="font-family:'DM Sans',sans-serif;">
             <span class="hero-word-sub">Scaling</span>
             <span class="hero-word-sub">organisations</span>
-            <span class="hero-word-sub">to</span>
-            <span class="hero-word-sub">new</span>
-            <span class="hero-word-sub">heights</span>
             <span class="hero-word-sub">through</span>
             <span class="hero-word-sub">intelligent</span>
             <span class="hero-word-sub hero-word-sub--bold">Software</span>
@@ -138,104 +122,234 @@
           </p>
         </div>
 
-        <!-- Supporting paragraph -->
-        <div class="overflow-hidden mt-5">
-          <p id="heroPara" class="hero-reveal text-sm sm:text-[0.9rem] font-bold leading-relaxed text-black max-w-lg mx-auto" style="font-family:'DM Sans',sans-serif;">
-            We partner with forward-thinking companies to architect intelligent systems, automate critical workflows, and unlock growth that was never possible before.
-          </p>
-        </div>
-
         <div class="overflow-hidden mt-7">
-          <a id="heroCta" href="#" class="hero-reveal inline-flex items-center gap-2 text-sm font-bold text-black tracking-wide group" style="font-family:'DM Sans',sans-serif;">
-            <span class="border-b border-black/50 pb-0.5 group-hover:border-black transition-colors">Explore what we build</span>
+          <a id="heroCta" href="#products" class="hero-reveal inline-flex items-center gap-2 text-sm font-medium text-purple-300 tracking-wide group" style="font-family:'DM Sans',sans-serif;">
+            <span class="border-b border-purple-400/50 pb-0.5 group-hover:border-purple-300 transition-colors">Explore what we build</span>
             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Scroll indicator -->
       <div id="scrollHint" class="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-hint">
-        <div class="flex flex-col items-center gap-2 text-black font-bold">
+        <div class="flex flex-col items-center gap-2 text-purple-300/60">
           <span class="text-xs tracking-widest uppercase" style="font-family:'DM Sans',sans-serif;">Scroll</span>
           <div class="scroll-line"></div>
         </div>
       </div>
-
-      </div><!-- /.puzzle-hero__sticky -->
     </section>
 
 
-    <!-- ── ANIMATED COLOR TRANSITION ── -->
+    <!-- ── Dark → Light transition ── -->
     <div class="color-shift" aria-hidden="true">
-      <!-- Animated gradient blobs -->
       <div class="color-shift__blob color-shift__blob--1"></div>
       <div class="color-shift__blob color-shift__blob--2"></div>
       <div class="color-shift__blob color-shift__blob--3"></div>
-      <!-- Base gradient sweep -->
       <div class="color-shift__sweep"></div>
-      <!-- Animated wave edge -->
       <svg class="color-shift__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path class="color-shift__wave-path color-shift__wave-path--1" d="M0 60 C240 10, 480 100, 720 40 S1200 90, 1440 50 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.6"/>
-        <path class="color-shift__wave-path color-shift__wave-path--2" d="M0 80 C360 30, 720 110, 1080 50 S1440 80, 1440 80 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.8"/>
-        <path class="color-shift__wave-path color-shift__wave-path--3" d="M0 95 C480 60, 960 120, 1440 90 L1440 120 L0 120Z" fill="#faf5ff"/>
+        <path class="color-shift__wave-path color-shift__wave-path--1" d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.6"/>
+        <path class="color-shift__wave-path color-shift__wave-path--2" d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.8"/>
+        <path class="color-shift__wave-path color-shift__wave-path--3" d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#faf5ff"/>
       </svg>
     </div>
 
-    <!-- ── SECTION 2 — Deep purple with AI card ── -->
-    <section class="section-dark relative px-8 sm:px-12 md:px-20 lg:px-28">
-      <div class="section-dark__inner min-h-screen flex items-center justify-center py-24">
 
-        <div id="aiCard" class="ai-card scroll-reveal text-center max-w-2xl">
+    <!-- ══════════════════════════════════
+         SECTION 2 — PRODUCTS
+         ══════════════════════════════════ -->
+    <section id="products" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-24" style="background:linear-gradient(180deg,#faf5ff,#fff,#faf5ff);">
+      <div class="max-w-5xl mx-auto">
 
-          <!-- AI Logo -->
-          <div class="ai-card__icon" style="justify-content:center;">
-            <svg width="88" height="88" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="aiGrad" x1="0" y1="80" x2="80" y2="0" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#06b6d4"/>
-                  <stop offset="50%" stop-color="#8b5cf6"/>
-                  <stop offset="100%" stop-color="#c084fc"/>
-                </linearGradient>
-              </defs>
-              <path d="M56 4H20C11.16 4 4 11.16 4 20v40c0 8.84 7.16 16 16 16h40c8.84 0 16-7.16 16-16V28" stroke="url(#aiGrad)" stroke-width="5" stroke-linecap="round" fill="none"/>
-              <text x="26" y="55" font-family="'DM Sans', sans-serif" font-weight="700" font-size="30" fill="url(#aiGrad)">AI</text>
-              <path d="M64 4 L66 10 L72 12 L66 14 L64 20 L62 14 L56 12 L62 10Z" fill="url(#aiGrad)"/>
-              <path d="M72 20 L73 23 L76 24 L73 25 L72 28 L71 25 L68 24 L71 23Z" fill="url(#aiGrad)" opacity="0.7"/>
-            </svg>
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="eyebrow">What We Build</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3" style="font-family:'Playfair Display',serif;">Solutions That <span class="text-purple-600">Transform</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger="100">
+
+          <div class="product-card stagger-child scroll-reveal">
+            <div class="product-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><defs><linearGradient id="pcGrad" x1="0" y1="24" x2="24" y2="0"><stop stop-color="#7e22ce"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><path d="M12 20V10M6 20V4M18 20v-6"/></svg>
+            </div>
+            <h3 class="product-card__title">AI-Powered Analytics</h3>
+            <p class="product-card__body">Transform raw data into actionable intelligence with our machine learning pipelines and real-time dashboards.</p>
           </div>
 
-          <!-- AI heading -->
-          <h2 class="ai-card__title" style="color:#1f2937; margin-bottom:16px;">
-            <span class="ai-word">Has</span>
-            <span class="ai-word">Your</span>
-            <span class="ai-word">Business</span>
-            <span class="ai-word">Ever</span>
-            <span class="ai-word">Considered</span>
-            <span class="ai-word ai-word--glow">AI?</span>
-          </h2>
+          <div class="product-card stagger-child scroll-reveal">
+            <div class="product-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </div>
+            <h3 class="product-card__title">Custom Software</h3>
+            <p class="product-card__body">Bespoke applications engineered for your workflows — from mobile apps to enterprise platforms.</p>
+          </div>
 
-          <!-- AI body text -->
-          <p class="ai-card__body" style="color:#6b7280; text-align:center; max-width:32rem; margin-left:auto; margin-right:auto;">
-            <span class="ai-line">The businesses that will lead tomorrow are</span>
-            <span class="ai-line">the ones automating and transforming today.</span>
-            <span class="ai-line">We bring enterprise-grade artificial intelligence</span>
-            <span class="ai-line">directly into your operations — eliminating</span>
-            <span class="ai-line">bottlenecks, reducing costs, and unlocking</span>
-            <span class="ai-line">revenue streams you didn't know existed.</span>
-          </p>
+          <div class="product-card stagger-child scroll-reveal">
+            <div class="product-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="product-card__title">Workflow Automation</h3>
+            <p class="product-card__body">Eliminate manual bottlenecks with intelligent process automation that learns and adapts.</p>
+          </div>
 
-          <!-- AI CTA -->
-          <a href="#" class="ai-card__cta">
-            <span>See How It Works</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <div class="product-card stagger-child scroll-reveal">
+            <div class="product-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M22 12H2M22 12a10 10 0 11-20 0 10 10 0 0120 0zM12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+            </div>
+            <h3 class="product-card__title">Cloud Architecture</h3>
+            <p class="product-card__body">Scalable, secure cloud infrastructure designed for African market conditions and growth.</p>
+          </div>
 
+          <div class="product-card stagger-child scroll-reveal">
+            <div class="product-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M21 5v14c0 1.66-4 3-9 3s-9-1.34-9-3V5"/></svg>
+            </div>
+            <h3 class="product-card__title">Data Engineering</h3>
+            <p class="product-card__body">Robust data pipelines that collect, clean, and organize your most valuable asset.</p>
+          </div>
+
+          <div class="product-card stagger-child scroll-reveal">
+            <div class="product-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#pcGrad)" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3 class="product-card__title">AI Chatbots</h3>
+            <p class="product-card__body">Conversational AI that handles customer support, sales, and operations around the clock.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Light → Dark transition ── -->
+    <div class="color-shift color-shift--reverse" aria-hidden="true">
+      <div class="color-shift__blob color-shift__blob--1"></div>
+      <div class="color-shift__blob color-shift__blob--2"></div>
+      <div class="color-shift__sweep" style="background:linear-gradient(180deg,transparent 0%,rgba(26,5,51,0.05) 20%,rgba(26,5,51,0.2) 40%,rgba(26,5,51,0.5) 65%,#1a0533 100%);"></div>
+      <svg class="color-shift__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#1a0533" opacity="0.6"/>
+        <path d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#1a0533" opacity="0.8"/>
+        <path d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#1a0533"/>
+      </svg>
+    </div>
+
+
+    <!-- ══════════════════════════════════
+         SECTION 3 — ABOUT
+         ══════════════════════════════════ -->
+    <section id="about" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-24" style="background:#1a0533;">
+      <div class="max-w-5xl mx-auto">
+
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="eyebrow" style="color:#c084fc;">About Us</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3" style="font-family:'Playfair Display',serif;">Built in Africa, <span class="text-purple-400">for Africa</span></h2>
+          <p class="text-purple-200/60 max-w-2xl mx-auto mt-4 text-base leading-relaxed" style="font-family:'DM Sans',sans-serif;">Founded with a mission to bring world-class technology to African enterprises, we bridge the gap between cutting-edge AI and real-world business challenges.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20" data-stagger="120">
+          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="50" data-suffix="+">
+            <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
+            <span class="stat-counter__label">Clients</span>
+          </div>
+          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="8">
+            <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
+            <span class="stat-counter__label">Countries</span>
+          </div>
+          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="200" data-suffix="+">
+            <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
+            <span class="stat-counter__label">Projects</span>
+          </div>
+          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="99" data-suffix="%">
+            <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
+            <span class="stat-counter__label">Uptime</span>
+          </div>
+        </div>
+
+        <!-- Mission / Vision -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10" data-stagger="150">
+          <div class="scroll-reveal stagger-child rounded-2xl p-8" style="background:rgba(139,92,246,0.08);border:1px solid rgba(192,132,252,0.1);">
+            <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Playfair Display',serif;">Our Mission</h3>
+            <p class="text-purple-200/60 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">To empower African businesses with intelligent technology that drives measurable growth and lasting impact across the continent.</p>
+          </div>
+          <div class="scroll-reveal stagger-child rounded-2xl p-8" style="background:rgba(139,92,246,0.08);border:1px solid rgba(192,132,252,0.1);">
+            <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Playfair Display',serif;">Our Vision</h3>
+            <p class="text-purple-200/60 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">A continent where every organization has access to world-class AI and software solutions, regardless of size or sector.</p>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ── FOOTER TRANSITION ── -->
+
+    <!-- ── Dark → Light transition ── -->
+    <div class="color-shift" aria-hidden="true" style="background:#1a0533;">
+      <div class="color-shift__blob color-shift__blob--1"></div>
+      <div class="color-shift__blob color-shift__blob--2"></div>
+      <div class="color-shift__sweep"></div>
+      <svg class="color-shift__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.6"/>
+        <path d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.8"/>
+        <path d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#faf5ff"/>
+      </svg>
+    </div>
+
+
+    <!-- ══════════════════════════════════
+         SECTION 4 — CONTACT
+         ══════════════════════════════════ -->
+    <section id="contact" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-24" style="background:linear-gradient(180deg,#faf5ff,#fff);">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="eyebrow">Get In Touch</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3" style="font-family:'Playfair Display',serif;">Let's Build Something <span class="text-purple-600">Extraordinary</span></h2>
+        </div>
+
+        <form class="contact-form scroll-reveal" onsubmit="return false;">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <input type="text" name="name" placeholder="Full Name" required class="form-input">
+            <input type="email" name="email" placeholder="Email Address" required class="form-input">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <input type="text" name="company" placeholder="Company" class="form-input">
+            <select name="subject" class="form-select">
+              <option value="">Subject</option>
+              <option>General Inquiry</option>
+              <option>Partnership</option>
+              <option>Product Demo</option>
+              <option>Support</option>
+            </select>
+          </div>
+          <textarea name="message" placeholder="Tell us about your project..." rows="5" required class="form-textarea mb-4"></textarea>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+
+        <div class="form-success hidden mt-8 text-center scroll-reveal">
+          <svg class="mx-auto mb-4" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <p class="text-lg font-semibold text-gray-900" style="font-family:'Playfair Display',serif;">Thank you!</p>
+          <p class="text-gray-500 text-sm mt-1" style="font-family:'DM Sans',sans-serif;">We'll be in touch within 24 hours.</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16" data-stagger="100">
+          <div class="info-card stagger-child scroll-reveal text-center">
+            <p class="text-sm font-semibold text-gray-900">hello@rylolabs.com</p>
+            <p class="text-xs text-gray-400 mt-1">Email us anytime</p>
+          </div>
+          <div class="info-card stagger-child scroll-reveal text-center">
+            <p class="text-sm font-semibold text-gray-900">Lagos, Nigeria</p>
+            <p class="text-xs text-gray-400 mt-1">Victoria Island</p>
+          </div>
+          <div class="info-card stagger-child scroll-reveal text-center">
+            <p class="text-sm font-semibold text-gray-900">Nairobi, Kenya</p>
+            <p class="text-xs text-gray-400 mt-1">Westlands Business Park</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── Footer transition ── -->
     <div class="footer-transition" aria-hidden="true">
       <div class="footer-transition__sweep"></div>
       <svg class="footer-transition__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
@@ -247,41 +361,39 @@
 
   </main>
 
+
   <!-- ═══════ FOOTER ═══════ -->
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__grid">
         <div class="footer-col">
-          <a href="index.html" class="topnav__logo" style="margin-bottom:1rem;display:inline-flex;">
+          <a href="#home" class="topnav__logo" style="margin-bottom:1rem;display:inline-flex;">
             <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;color:#f3e8ff;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;color:#c084fc;">.</span>
           </a>
           <p class="footer-desc">Pioneering the next wave of innovation across Africa through intelligent software &amp; AI solutions.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Solutions</h4>
-          <a href="products.html" class="footer-link">AI Integration</a>
-          <a href="products.html" class="footer-link">Custom Software</a>
-          <a href="products.html" class="footer-link">Data Analytics</a>
-          <a href="products.html" class="footer-link">Cloud Architecture</a>
+          <a href="#products" class="footer-link">AI Integration</a>
+          <a href="#products" class="footer-link">Custom Software</a>
+          <a href="#products" class="footer-link">Data Analytics</a>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Company</h4>
-          <a href="about.html" class="footer-link">About Us</a>
-          <a href="about.html" class="footer-link">Our Team</a>
-          <a href="products.html" class="footer-link">Case Studies</a>
-          <a href="contact.html" class="footer-link">Careers</a>
+          <a href="#about" class="footer-link">About Us</a>
+          <a href="#products" class="footer-link">Our Work</a>
+          <a href="#contact" class="footer-link">Careers</a>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Contact</h4>
           <a href="mailto:hello@rylolabs.com" class="footer-link">hello@rylolabs.com</a>
-          <a href="contact.html" class="footer-link">Lagos, Nigeria</a>
-          <a href="contact.html" class="footer-link">Nairobi, Kenya</a>
-          <a href="contact.html" class="footer-link footer-link--cta">Get Started &rarr;</a>
+          <a href="#contact" class="footer-link">Lagos, Nigeria</a>
+          <a href="#contact" class="footer-link footer-link--cta">Get Started &rarr;</a>
         </div>
       </div>
       <div class="site-footer__bottom">
         <span>&copy; 2026 Rylo Labs. All rights reserved.</span>
-        <span>Privacy Policy &middot; Terms of Service</span>
+        <span>Privacy &middot; Terms</span>
       </div>
     </div>
   </footer>
