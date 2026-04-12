@@ -178,4 +178,50 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+
+  /* ═══════════════════════════════════════
+     OVERLAPPING TRANSITION — Scroll-driven
+     Each panel layer shifts its clip-path
+     at a different rate as you scroll,
+     creating a parallax color overlap.
+     ═══════════════════════════════════════ */
+  var overlaps = document.querySelectorAll('.section-overlap');
+
+  function updateOverlaps() {
+    var vh = window.innerHeight;
+
+    overlaps.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      var height = el.offsetHeight;
+
+      /* How far through the transition (0 = just entering bottom, 1 = exiting top) */
+      var progress = 1 - (rect.bottom / (vh + height));
+      progress = Math.max(0, Math.min(progress, 1));
+
+      var layers = el.querySelectorAll('.section-overlap__layer');
+
+      layers.forEach(function (layer, i) {
+        /* Each layer shifts its diagonal cut by a different amount based on scroll */
+        var speed = 1 - (i / layers.length);  /* layer 1 moves most, last moves least */
+        var shift = progress * 35 * speed;     /* max 35% shift */
+
+        /* Base clip positions per layer */
+        var baseTopRight = 30 + i * 12;
+        var baseBottomLeft = 55 + i * 7;
+
+        /* Scroll shifts the bottom edge up and top-right edge down */
+        var topRight = baseTopRight + shift;
+        var bottomLeft = baseBottomLeft - shift * 0.6;
+
+        layer.style.clipPath =
+          'polygon(0 0, 100% 0, 100% ' + topRight + '%, 0 ' + bottomLeft + '%)';
+      });
+    });
+  }
+
+  window.addEventListener('scroll', function () {
+    requestAnimationFrame(updateOverlaps);
+  }, { passive: true });
+  updateOverlaps();
+
 })();

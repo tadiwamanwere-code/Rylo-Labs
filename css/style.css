@@ -484,105 +484,75 @@ body::after {
 
 
 /* ═══════════════════════════════════════
-   ANIMATED COLOR TRANSITION
+   OVERLAPPING COLOR TRANSITIONS
+   Diagonal panels that sweep across as
+   you scroll, creating a cinematic color
+   overlap between sections.
    ═══════════════════════════════════════ */
 
-.color-shift {
+.section-overlap {
   position: relative;
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   margin-top: -1px;
-  background: #1a0533;
 }
 
-/* Gradient sweep — animates from transparent to deep purple */
-.color-shift__sweep {
+/* Each layer: full-width panel clipped at an angle */
+.section-overlap__layer {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(250, 245, 255, 0.02) 15%,
-    rgba(243, 232, 255, 0.12) 35%,
-    rgba(233, 213, 255, 0.35) 55%,
-    rgba(250, 245, 255, 0.7) 80%,
-    #faf5ff 100%
-  );
+  will-change: clip-path;
+  transition: clip-path 0.1s linear;
 }
 
-/* Animated blobs — purple glow orbs that drift across the transition */
-.color-shift__blob {
+/* Staggered diagonal clips — each layer reveals at a different angle */
+.section-overlap__layer--1 {
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 55%);
+}
+.section-overlap__layer--2 {
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 62%);
+}
+.section-overlap__layer--3 {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 70%);
+}
+.section-overlap__layer--4 {
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 0 80%);
+}
+.section-overlap__layer--5 {
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 88%);
+}
+.section-overlap__layer--6 {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 96%);
+}
+
+/* Floating glow orbs */
+.section-overlap__glow {
   position: absolute;
   border-radius: 50%;
+  pointer-events: none;
   filter: blur(80px);
+  z-index: 1;
 }
-
-.color-shift__blob--1 {
-  width: 400px; height: 400px;
-  background: rgba(168, 85, 247, 0.2);
-  top: -30%; left: 10%;
-  animation: blob-drift-1 8s ease-in-out infinite;
-}
-
-.color-shift__blob--2 {
+.section-overlap__glow--1 {
   width: 350px; height: 350px;
-  background: rgba(192, 132, 252, 0.18);
-  top: 0%; right: 15%;
-  animation: blob-drift-2 10s ease-in-out infinite 2s;
+  background: rgba(168, 85, 247, 0.2);
+  top: -20%; left: 15%;
+  animation: overlap-glow-1 7s ease-in-out infinite;
 }
-
-.color-shift__blob--3 {
+.section-overlap__glow--2 {
   width: 300px; height: 300px;
-  background: rgba(233, 213, 255, 0.15);
-  top: 20%; left: 40%;
-  animation: blob-drift-3 12s ease-in-out infinite 4s;
+  background: rgba(192, 132, 252, 0.15);
+  top: 10%; right: 10%;
+  animation: overlap-glow-2 9s ease-in-out infinite 2s;
 }
 
-@keyframes blob-drift-1 {
+@keyframes overlap-glow-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  33%      { transform: translate(60px, 30px) scale(1.15); }
-  66%      { transform: translate(-30px, 50px) scale(0.9); }
+  50%      { transform: translate(40px, 30px) scale(1.15); }
 }
-@keyframes blob-drift-2 {
+@keyframes overlap-glow-2 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(-50px, 40px) scale(1.1); }
-}
-@keyframes blob-drift-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25%      { transform: translate(40px, -20px) scale(1.08); }
-  75%      { transform: translate(-30px, 30px) scale(0.95); }
-}
-
-/* Animated wave edge at the bottom */
-.color-shift__wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-}
-
-.color-shift__wave-path--1 {
-  animation: wave-morph-1 6s ease-in-out infinite;
-}
-.color-shift__wave-path--2 {
-  animation: wave-morph-2 8s ease-in-out infinite 1s;
-}
-.color-shift__wave-path--3 {
-  animation: wave-morph-3 5s ease-in-out infinite 0.5s;
-}
-
-@keyframes wave-morph-1 {
-  0%, 100% { d: path("M0 60 C240 10, 480 100, 720 40 S1200 90, 1440 50 L1440 120 L0 120Z"); fill: #faf5ff; }
-  50%      { d: path("M0 50 C360 90, 600 20, 840 70 S1200 30, 1440 60 L1440 120 L0 120Z"); fill: #faf5ff; }
-}
-@keyframes wave-morph-2 {
-  0%, 100% { d: path("M0 80 C360 30, 720 110, 1080 50 S1440 80, 1440 80 L1440 120 L0 120Z"); fill: #faf5ff; }
-  50%      { d: path("M0 70 C240 100, 600 40, 960 90 S1440 60, 1440 70 L1440 120 L0 120Z"); fill: #faf5ff; }
-}
-@keyframes wave-morph-3 {
-  0%, 100% { d: path("M0 95 C480 60, 960 120, 1440 90 L1440 120 L0 120Z"); fill: #faf5ff; }
-  50%      { d: path("M0 100 C360 80, 840 110, 1440 95 L1440 120 L0 120Z"); fill: #faf5ff; }
+  50%      { transform: translate(-30px, 20px) scale(1.1); }
 }
 
 

@@ -182,17 +182,16 @@
     </section>
 
 
-    <!-- ── Dark → Light transition ── -->
-    <div class="color-shift" aria-hidden="true">
-      <div class="color-shift__blob color-shift__blob--1"></div>
-      <div class="color-shift__blob color-shift__blob--2"></div>
-      <div class="color-shift__blob color-shift__blob--3"></div>
-      <div class="color-shift__sweep"></div>
-      <svg class="color-shift__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path class="color-shift__wave-path color-shift__wave-path--1" d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.6"/>
-        <path class="color-shift__wave-path color-shift__wave-path--2" d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.8"/>
-        <path class="color-shift__wave-path color-shift__wave-path--3" d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#faf5ff"/>
-      </svg>
+    <!-- ── TRANSITION 1: Dark → Light (overlapping panels) ── -->
+    <div class="section-overlap" data-from="dark" aria-hidden="true">
+      <div class="section-overlap__layer section-overlap__layer--1" style="background:#2d0a4e;"></div>
+      <div class="section-overlap__layer section-overlap__layer--2" style="background:#581c87;"></div>
+      <div class="section-overlap__layer section-overlap__layer--3" style="background:#7e22ce;"></div>
+      <div class="section-overlap__layer section-overlap__layer--4" style="background:#a855f7;"></div>
+      <div class="section-overlap__layer section-overlap__layer--5" style="background:#d8b4fe;"></div>
+      <div class="section-overlap__layer section-overlap__layer--6" style="background:#f3e8ff;"></div>
+      <div class="section-overlap__glow section-overlap__glow--1"></div>
+      <div class="section-overlap__glow section-overlap__glow--2"></div>
     </div>
 
 
@@ -262,16 +261,16 @@
     </section>
 
 
-    <!-- ── Light → Dark transition ── -->
-    <div class="color-shift color-shift--reverse" aria-hidden="true">
-      <div class="color-shift__blob color-shift__blob--1"></div>
-      <div class="color-shift__blob color-shift__blob--2"></div>
-      <div class="color-shift__sweep" style="background:linear-gradient(180deg,transparent 0%,rgba(26,5,51,0.05) 20%,rgba(26,5,51,0.2) 40%,rgba(26,5,51,0.5) 65%,#1a0533 100%);"></div>
-      <svg class="color-shift__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#1a0533" opacity="0.6"/>
-        <path d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#1a0533" opacity="0.8"/>
-        <path d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#1a0533"/>
-      </svg>
+    <!-- ── TRANSITION 2: Light → Dark (overlapping panels) ── -->
+    <div class="section-overlap" data-from="light" aria-hidden="true">
+      <div class="section-overlap__layer section-overlap__layer--1" style="background:#f3e8ff;"></div>
+      <div class="section-overlap__layer section-overlap__layer--2" style="background:#d8b4fe;"></div>
+      <div class="section-overlap__layer section-overlap__layer--3" style="background:#a855f7;"></div>
+      <div class="section-overlap__layer section-overlap__layer--4" style="background:#7e22ce;"></div>
+      <div class="section-overlap__layer section-overlap__layer--5" style="background:#581c87;"></div>
+      <div class="section-overlap__layer section-overlap__layer--6" style="background:#2d0a4e;"></div>
+      <div class="section-overlap__glow section-overlap__glow--1"></div>
+      <div class="section-overlap__glow section-overlap__glow--2"></div>
     </div>
 
 
@@ -323,16 +322,16 @@
     </section>
 
 
-    <!-- ── Dark → Light transition ── -->
-    <div class="color-shift" aria-hidden="true" style="background:#1a0533;">
-      <div class="color-shift__blob color-shift__blob--1"></div>
-      <div class="color-shift__blob color-shift__blob--2"></div>
-      <div class="color-shift__sweep"></div>
-      <svg class="color-shift__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.6"/>
-        <path d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.8"/>
-        <path d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#faf5ff"/>
-      </svg>
+    <!-- ── TRANSITION 3: Dark → Light (overlapping panels) ── -->
+    <div class="section-overlap" data-from="dark" aria-hidden="true">
+      <div class="section-overlap__layer section-overlap__layer--1" style="background:#2d0a4e;"></div>
+      <div class="section-overlap__layer section-overlap__layer--2" style="background:#581c87;"></div>
+      <div class="section-overlap__layer section-overlap__layer--3" style="background:#7e22ce;"></div>
+      <div class="section-overlap__layer section-overlap__layer--4" style="background:#a855f7;"></div>
+      <div class="section-overlap__layer section-overlap__layer--5" style="background:#d8b4fe;"></div>
+      <div class="section-overlap__layer section-overlap__layer--6" style="background:#f3e8ff;"></div>
+      <div class="section-overlap__glow section-overlap__glow--1"></div>
+      <div class="section-overlap__glow section-overlap__glow--2"></div>
     </div>
 
 
