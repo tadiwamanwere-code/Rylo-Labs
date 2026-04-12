@@ -28,6 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
 
@@ -39,24 +40,26 @@
   <nav id="navbar" class="topnav topnav--dark fixed top-0 left-0 right-0 z-50">
     <div class="topnav__inner">
       <!-- Logo -->
-      <a href="#" class="topnav__logo">
+      <a href="index.html" class="topnav__logo">
         <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;">.</span>
       </a>
 
       <!-- Center links -->
       <div class="topnav__links">
-        <a href="#" class="topnav__link active">Home</a>
-        <a href="#" class="topnav__link">Products</a>
-        <a href="#" class="topnav__link">About</a>
-        <a href="#" class="topnav__link">Contact</a>
+        <a href="index.html" class="topnav__link active">Home</a>
+        <a href="products.html" class="topnav__link">Products</a>
+        <a href="about.html" class="topnav__link">About</a>
+        <a href="contact.html" class="topnav__link">Contact</a>
       </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="topnav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
 
       <!-- Right actions -->
       <div class="topnav__actions">
-        <button class="topnav__icon" aria-label="Search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </button>
-        <button class="topnav__cta">Get Started</button>
+        <a href="contact.html" class="topnav__cta">Get Started</a>
       </div>
     </div>
 
@@ -107,7 +110,7 @@
 
         <!-- Primary tagline -->
         <div id="heroTagline">
-          <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-black" style="font-family:'DM Sans',sans-serif;">
+          <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-extrabold leading-snug text-black" style="font-family:'DM Sans',sans-serif;">
             <span class="hero-word">Pioneering</span>
             <span class="hero-word">the</span>
             <span class="hero-word">Next</span>
@@ -121,7 +124,7 @@
 
         <!-- Extended description -->
         <div id="heroSub" class="mt-1.5">
-          <p class="text-base sm:text-lg md:text-xl font-bold leading-relaxed text-white" style="font-family:'DM Sans',sans-serif;">
+          <p class="text-base sm:text-lg md:text-xl font-extrabold leading-relaxed text-black" style="font-family:'DM Sans',sans-serif;">
             <span class="hero-word-sub">Scaling</span>
             <span class="hero-word-sub">organisations</span>
             <span class="hero-word-sub">to</span>
@@ -137,7 +140,7 @@
 
         <!-- Supporting paragraph -->
         <div class="overflow-hidden mt-5">
-          <p id="heroPara" class="hero-reveal text-sm sm:text-[0.9rem] font-semibold leading-relaxed text-white max-w-lg mx-auto" style="font-family:'DM Sans',sans-serif;">
+          <p id="heroPara" class="hero-reveal text-sm sm:text-[0.9rem] font-bold leading-relaxed text-black max-w-lg mx-auto" style="font-family:'DM Sans',sans-serif;">
             We partner with forward-thinking companies to architect intelligent systems, automate critical workflows, and unlock growth that was never possible before.
           </p>
         </div>
@@ -152,7 +155,7 @@
 
       <!-- Scroll indicator -->
       <div id="scrollHint" class="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-hint">
-        <div class="flex flex-col items-center gap-2 text-white font-bold">
+        <div class="flex flex-col items-center gap-2 text-black font-bold">
           <span class="text-xs tracking-widest uppercase" style="font-family:'DM Sans',sans-serif;">Scroll</span>
           <div class="scroll-line"></div>
         </div>
@@ -232,8 +235,58 @@
       </div>
     </section>
 
+    <!-- ── FOOTER TRANSITION ── -->
+    <div class="footer-transition" aria-hidden="true">
+      <div class="footer-transition__sweep"></div>
+      <svg class="footer-transition__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#1a0533" opacity="0.6"/>
+        <path d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#1a0533" opacity="0.8"/>
+        <path d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#1a0533"/>
+      </svg>
+    </div>
+
   </main>
 
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="footer-col">
+          <a href="index.html" class="topnav__logo" style="margin-bottom:1rem;display:inline-flex;">
+            <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;color:#f3e8ff;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;color:#c084fc;">.</span>
+          </a>
+          <p class="footer-desc">Pioneering the next wave of innovation across Africa through intelligent software &amp; AI solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <a href="products.html" class="footer-link">AI Integration</a>
+          <a href="products.html" class="footer-link">Custom Software</a>
+          <a href="products.html" class="footer-link">Data Analytics</a>
+          <a href="products.html" class="footer-link">Cloud Architecture</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Company</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="about.html" class="footer-link">Our Team</a>
+          <a href="products.html" class="footer-link">Case Studies</a>
+          <a href="contact.html" class="footer-link">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <a href="mailto:hello@rylolabs.com" class="footer-link">hello@rylolabs.com</a>
+          <a href="contact.html" class="footer-link">Lagos, Nigeria</a>
+          <a href="contact.html" class="footer-link">Nairobi, Kenya</a>
+          <a href="contact.html" class="footer-link footer-link--cta">Get Started &rarr;</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; 2026 Rylo Labs. All rights reserved.</span>
+        <span>Privacy Policy &middot; Terms of Service</span>
+      </div>
+    </div>
+  </footer>
+
   <script src="js/main.js"></script>
+  <script src="js/pages.js"></script>
 </body>
 </html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Rylo Labs</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple: {
+              50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe',
+              400: '#c084fc', 500: '#a855f7', 600: '#9333ea', 700: '#7e22ce',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav id="navbar" class="topnav fixed top-0 left-0 right-0 z-50">
+    <div class="topnav__inner">
+      <!-- Logo -->
+      <a href="index.html" class="topnav__logo">
+        <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;">.</span>
+      </a>
+
+      <!-- Center links -->
+      <div class="topnav__links">
+        <a href="index.html" class="topnav__link">Home</a>
+        <a href="products.html" class="topnav__link">Products</a>
+        <a href="about.html" class="topnav__link active">About</a>
+        <a href="contact.html" class="topnav__link">Contact</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="topnav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Right actions -->
+      <div class="topnav__actions">
+        <a href="contact.html" class="topnav__cta">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div class="topnav__mobile-panel">
+      <a href="index.html" class="topnav__mobile-link">Home</a>
+      <a href="products.html" class="topnav__mobile-link">Products</a>
+      <a href="about.html" class="topnav__mobile-link active">About</a>
+      <a href="contact.html" class="topnav__mobile-link">Contact</a>
+      <a href="contact.html" class="topnav__mobile-cta">Get Started</a>
+    </div>
+
+    <!-- Animated gradient separator line -->
+    <div class="topnav__line" aria-hidden="true"></div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCROLLABLE CONTENT
+       ═══════════════════════════════════════════ -->
+  <main class="relative" style="z-index:5;">
+
+    <!-- ── SECTION 1 : HERO ── -->
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <span class="eyebrow">ABOUT US</span>
+
+        <h1 class="page-headline">
+          <span class="page-word">Pioneering</span>
+          <span class="page-word">Innovation</span>
+          <span class="page-word">Across</span>
+          <span class="page-word accent">Africa</span>
+        </h1>
+
+        <p class="page-hero__subtitle" style="font-family:'DM Sans',sans-serif; font-size:1.05rem; line-height:1.8; color:#6b7280; max-width:600px; margin:0 auto; opacity:0; transform:translateY(15px); transition: opacity 0.8s ease, transform 0.8s ease;">
+          Founded with a mission to bring world-class technology solutions to African enterprises, Rylo Labs bridges the gap between cutting-edge AI and real-world business challenges.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 2 : MISSION / VISION / VALUES ── -->
+    <section class="page-section" style="background:#faf5ff;">
+      <div class="page-section__inner">
+        <div class="page-section__header">
+          <span class="eyebrow">WHO WE ARE</span>
+          <h2 class="page-headline">Mission, Vision &amp; Values</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto px-4" data-stagger="120">
+
+          <!-- Mission -->
+          <div class="stagger-child scroll-reveal product-card text-center">
+            <div class="product-card__icon mx-auto" style="justify-content:center;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="missionGrad" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7e22ce"/>
+                    <stop offset="100%" stop-color="#a855f7"/>
+                  </linearGradient>
+                </defs>
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="url(#missionGrad)" stroke-width="1.5" fill="none"/>
+                <path d="M12 18a6 6 0 100-12 6 6 0 000 12z" stroke="url(#missionGrad)" stroke-width="1.5" fill="none"/>
+                <path d="M12 14a2 2 0 100-4 2 2 0 000 4z" fill="url(#missionGrad)"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Mission</h3>
+            <p class="product-card__body">To empower African businesses with intelligent technology that drives measurable growth and lasting impact.</p>
+          </div>
+
+          <!-- Vision -->
+          <div class="stagger-child scroll-reveal product-card text-center">
+            <div class="product-card__icon mx-auto" style="justify-content:center;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="visionGrad" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7e22ce"/>
+                    <stop offset="100%" stop-color="#a855f7"/>
+                  </linearGradient>
+                </defs>
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" stroke="url(#visionGrad)" stroke-width="1.5" fill="none"/>
+                <circle cx="12" cy="12" r="3" stroke="url(#visionGrad)" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Vision</h3>
+            <p class="product-card__body">A continent where every organization has access to world-class AI and software solutions, regardless of size or sector.</p>
+          </div>
+
+          <!-- Values -->
+          <div class="stagger-child scroll-reveal product-card text-center">
+            <div class="product-card__icon mx-auto" style="justify-content:center;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="valuesGrad" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7e22ce"/>
+                    <stop offset="100%" stop-color="#a855f7"/>
+                  </linearGradient>
+                </defs>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="url(#valuesGrad)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Values</h3>
+            <p class="product-card__body">Innovation first. Partnership always. Impact everywhere. Excellence in everything.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 3 : OUR STORY TIMELINE ── -->
+    <section class="page-section">
+      <div class="page-section__inner">
+        <div class="page-section__header">
+          <span class="eyebrow">OUR STORY</span>
+          <h2 class="page-headline">Our Journey</h2>
+        </div>
+
+        <div class="timeline">
+
+          <!-- 2022 -->
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2022</span>
+              <h3 class="timeline__title">Where It All Began</h3>
+              <p class="timeline__body">Founded in Lagos with a team of 3 engineers and a bold vision to transform African tech.</p>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2023</span>
+              <h3 class="timeline__title">First Enterprise Deployment</h3>
+              <p class="timeline__body">Deployed our first enterprise AI solution and expanded operations to Nairobi, Kenya.</p>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2024</span>
+              <h3 class="timeline__title">Continental Growth</h3>
+              <p class="timeline__body">Grew to 50+ clients across 8 African countries, delivering over 200 successful projects.</p>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2025</span>
+              <h3 class="timeline__title">Platform Launch</h3>
+              <p class="timeline__body">Launched our proprietary AI platform and opened our third office in Cape Town.</p>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2026</span>
+              <h3 class="timeline__title">Scaling New Frontiers</h3>
+              <p class="timeline__body">Scaling across the continent with new partnerships and groundbreaking AI innovations.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 4 : TEAM ── -->
+    <section class="page-section" style="background:#faf5ff;">
+      <div class="page-section__inner">
+        <div class="page-section__header">
+          <span class="eyebrow">OUR TEAM</span>
+          <h2 class="page-headline">The People Behind Rylo</h2>
+          <p class="page-section__sub">A diverse team of engineers, designers, and strategists united by a shared passion for African innovation.</p>
+        </div>
+
+        <div class="team-cards" data-stagger="100">
+
+          <!-- Adebayo Okonkwo -->
+          <div class="team-card stagger-child scroll-reveal">
+            <div class="team-card__photo team-card__photo--placeholder" style="display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#ffffff;position:relative;z-index:2;">AO</span>
+            </div>
+            <h3 class="team-card__name">Adebayo Okonkwo</h3>
+            <p class="team-card__role">CEO</p>
+            <p class="team-card__bio">Serial entrepreneur with 15 years in African tech. Previously led digital transformation at major Lagos enterprises.</p>
+          </div>
+
+          <!-- Amara Ndung'u -->
+          <div class="team-card stagger-child scroll-reveal">
+            <div class="team-card__photo team-card__photo--placeholder" style="display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#ffffff;position:relative;z-index:2;">AN</span>
+            </div>
+            <h3 class="team-card__name">Amara Ndung'u</h3>
+            <p class="team-card__role">CTO</p>
+            <p class="team-card__bio">Former Google engineer with deep expertise in distributed systems and machine learning infrastructure.</p>
+          </div>
+
+          <!-- Kwame Asante -->
+          <div class="team-card stagger-child scroll-reveal">
+            <div class="team-card__photo team-card__photo--placeholder" style="display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#ffffff;position:relative;z-index:2;">KA</span>
+            </div>
+            <h3 class="team-card__name">Kwame Asante</h3>
+            <p class="team-card__role">Head of AI</p>
+            <p class="team-card__bio">PhD in Machine Learning from MIT. Published researcher in NLP for African languages.</p>
+          </div>
+
+          <!-- Fatima Al-Hassan -->
+          <div class="team-card stagger-child scroll-reveal">
+            <div class="team-card__photo team-card__photo--placeholder" style="display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#ffffff;position:relative;z-index:2;">FA</span>
+            </div>
+            <h3 class="team-card__name">Fatima Al-Hassan</h3>
+            <p class="team-card__role">Head of Engineering</p>
+            <p class="team-card__bio">Full-stack architect who has built platforms serving millions of users across East Africa.</p>
+          </div>
+
+          <!-- Zanele Dlamini -->
+          <div class="team-card stagger-child scroll-reveal">
+            <div class="team-card__photo team-card__photo--placeholder" style="display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#ffffff;position:relative;z-index:2;">ZD</span>
+            </div>
+            <h3 class="team-card__name">Zanele Dlamini</h3>
+            <p class="team-card__role">Head of Design</p>
+            <p class="team-card__bio">Award-winning UX designer passionate about creating technology that works for African contexts.</p>
+          </div>
+
+          <!-- James Mwangi -->
+          <div class="team-card stagger-child scroll-reveal">
+            <div class="team-card__photo team-card__photo--placeholder" style="display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#ffffff;position:relative;z-index:2;">JM</span>
+            </div>
+            <h3 class="team-card__name">James Mwangi</h3>
+            <p class="team-card__role">Head of Operations</p>
+            <p class="team-card__bio">Operations leader with experience scaling startups from seed to Series B across three African markets.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 5 : STATS ── -->
+    <section class="section-dark-alt py-20 px-8">
+      <div class="section-dark-alt__inner">
+        <div class="text-center mb-12">
+          <span class="eyebrow">BY THE NUMBERS</span>
+          <h2 class="page-headline page-headline--light">Our Impact</h2>
+        </div>
+
+        <div class="stat-counters">
+
+          <div class="stat-counter stat-counter--dark" data-target="50" data-suffix="+">
+            <div class="stat-counter__number accent">0</div>
+            <div class="stat-counter__bar"></div>
+            <div class="stat-counter__label">Clients</div>
+          </div>
+
+          <div class="stat-counter stat-counter--dark" data-target="8">
+            <div class="stat-counter__number accent">0</div>
+            <div class="stat-counter__bar"></div>
+            <div class="stat-counter__label">Countries</div>
+          </div>
+
+          <div class="stat-counter stat-counter--dark" data-target="200" data-suffix="+">
+            <div class="stat-counter__number accent">0</div>
+            <div class="stat-counter__bar"></div>
+            <div class="stat-counter__label">Projects</div>
+          </div>
+
+          <div class="stat-counter stat-counter--dark" data-target="99.9" data-suffix="%">
+            <div class="stat-counter__number accent">0</div>
+            <div class="stat-counter__bar"></div>
+            <div class="stat-counter__label">Uptime</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 6 : CTA BANNER ── -->
+    <section class="cta-banner">
+      <div class="cta-banner__inner">
+        <h2 class="cta-banner__headline">Join the companies transforming with Rylo Labs</h2>
+        <a href="contact.html" class="cta-banner__button">
+          <span>Partner With Us</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ── FOOTER TRANSITION ── -->
+    <div class="footer-transition" aria-hidden="true">
+      <div class="footer-transition__sweep"></div>
+      <svg class="footer-transition__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#1a0533" opacity="0.6"/>
+        <path d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#1a0533" opacity="0.8"/>
+        <path d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#1a0533"/>
+      </svg>
+    </div>
+
+  </main>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="footer-col">
+          <a href="index.html" class="topnav__logo" style="margin-bottom:1rem;display:inline-flex;">
+            <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;color:#f3e8ff;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;color:#c084fc;">.</span>
+          </a>
+          <p class="footer-desc">Pioneering the next wave of innovation across Africa through intelligent software &amp; AI solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <a href="products.html" class="footer-link">AI Integration</a>
+          <a href="products.html" class="footer-link">Custom Software</a>
+          <a href="products.html" class="footer-link">Data Analytics</a>
+          <a href="products.html" class="footer-link">Cloud Architecture</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Company</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="about.html" class="footer-link">Our Team</a>
+          <a href="products.html" class="footer-link">Case Studies</a>
+          <a href="contact.html" class="footer-link">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <a href="mailto:hello@rylolabs.com" class="footer-link">hello@rylolabs.com</a>
+          <a href="contact.html" class="footer-link">Lagos, Nigeria</a>
+          <a href="contact.html" class="footer-link">Nairobi, Kenya</a>
+          <a href="contact.html" class="footer-link footer-link--cta">Get Started &rarr;</a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; 2026 Rylo Labs. All rights reserved.</span>
+        <span>Privacy Policy &middot; Terms of Service</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>
