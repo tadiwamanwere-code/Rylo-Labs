@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rylo Labs</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple: {
+              50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe',
+              400: '#c084fc', 500: '#a855f7', 600: '#9333ea', 700: '#7e22ce',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══ PUZZLE SCROLL BACKGROUND ═══ -->
+  <img id="puzzleFrame" class="fixed inset-0" style="z-index:0;" alt="" draggable="false" />
+  <div id="puzzleOverlay" class="fixed inset-0 pointer-events-none" style="z-index:1; background: radial-gradient(ellipse at center, rgba(40,10,65,0.1) 0%, rgba(20,5,40,0.25) 100%);"></div>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav id="navbar" class="topnav topnav--dark fixed top-0 left-0 right-0 z-50">
+    <div class="topnav__inner">
+      <!-- Logo -->
+      <a href="#" class="topnav__logo">
+        <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;">.</span>
+      </a>
+
+      <!-- Center links -->
+      <div class="topnav__links">
+        <a href="#" class="topnav__link active">Home</a>
+        <a href="#" class="topnav__link">Products</a>
+        <a href="#" class="topnav__link">About</a>
+        <a href="#" class="topnav__link">Contact</a>
+      </div>
+
+      <!-- Right actions -->
+      <div class="topnav__actions">
+        <button class="topnav__icon" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="topnav__cta">Get Started</button>
+      </div>
+    </div>
+
+    <!-- Animated gradient separator line -->
+    <div class="topnav__line" aria-hidden="true"></div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCROLLABLE CONTENT
+       ═══════════════════════════════════════════ -->
+  <main class="relative" style="z-index:5;">
+
+    <!-- ── SECTION 1 : HERO (scroll-driven puzzle background) ── -->
+    <section class="puzzle-hero relative">
+      <div class="puzzle-hero__sticky px-8 sm:px-12 md:px-20 lg:px-28">
+
+      <div id="hero" class="select-none text-center max-w-3xl mx-auto">
+
+        <!-- Logo row: flask + Rylo Labs -->
+        <div class="hero-line overflow-hidden flex justify-center">
+          <div id="heroTitle" class="hero-reveal hero-title-row">
+            <svg class="hero-flask" width="52" height="68" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="heroFlaskGrad" x1="10" y1="64" x2="38" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#7e22ce"/>
+                  <stop offset="50%" stop-color="#9333ea"/>
+                  <stop offset="100%" stop-color="#a855f7"/>
+                </linearGradient>
+              </defs>
+              <path d="M19 6v18L6 54c-2 4 1 8 5 8h26c4 0 7-4 5-8L29 24V6" stroke="url(#heroFlaskGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M16 6h16" stroke="url(#heroFlaskGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M9 48q15-7 30 0l3 6c2 4-1 8-5 8H11c-4 0-7-4-5-8z" fill="url(#heroFlaskGrad)" opacity="0.18"/>
+              <circle cx="19" cy="50" r="2" fill="url(#heroFlaskGrad)" opacity="0.35"/>
+              <circle cx="28" cy="46" r="1.5" fill="url(#heroFlaskGrad)" opacity="0.25"/>
+              <circle cx="23" cy="42" r="1" fill="url(#heroFlaskGrad)" opacity="0.2"/>
+              <circle class="flask-bubble flask-bubble--1" cx="22" cy="-2" r="2" stroke="url(#heroFlaskGrad)" stroke-width="1.2" fill="none" opacity="0.35"/>
+              <circle class="flask-bubble flask-bubble--2" cx="28" cy="-8" r="1.5" stroke="url(#heroFlaskGrad)" stroke-width="1" fill="none" opacity="0.25"/>
+              <circle class="flask-bubble flask-bubble--3" cx="24" cy="-15" r="1" stroke="url(#heroFlaskGrad)" stroke-width="0.8" fill="none" opacity="0.18"/>
+            </svg>
+            <span class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-black" style="font-family:'Playfair Display',serif;">Rylo <span class="font-bold text-purple-700">Labs</span></span>
+          </div>
+        </div>
+
+        <div class="overflow-hidden mt-4 mb-3 flex justify-center">
+          <div id="heroLine" class="hero-accent-line w-14 h-[2px] bg-gradient-to-r from-purple-500 to-purple-300" style="transform-origin:center;"></div>
+        </div>
+
+        <!-- Primary tagline -->
+        <div id="heroTagline">
+          <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-black" style="font-family:'DM Sans',sans-serif;">
+            <span class="hero-word">Pioneering</span>
+            <span class="hero-word">the</span>
+            <span class="hero-word">Next</span>
+            <span class="hero-word">Wave</span>
+            <span class="hero-word">of</span>
+            <span class="hero-word">Innovation</span>
+            <span class="hero-word hero-word--accent">Across</span>
+            <span class="hero-word hero-word--accent">Africa</span>
+          </p>
+        </div>
+
+        <!-- Extended description -->
+        <div id="heroSub" class="mt-1.5">
+          <p class="text-base sm:text-lg md:text-xl font-bold leading-relaxed text-white" style="font-family:'DM Sans',sans-serif;">
+            <span class="hero-word-sub">Scaling</span>
+            <span class="hero-word-sub">organisations</span>
+            <span class="hero-word-sub">to</span>
+            <span class="hero-word-sub">new</span>
+            <span class="hero-word-sub">heights</span>
+            <span class="hero-word-sub">through</span>
+            <span class="hero-word-sub">intelligent</span>
+            <span class="hero-word-sub hero-word-sub--bold">Software</span>
+            <span class="hero-word-sub">&amp;</span>
+            <span class="hero-word-sub hero-word-sub--bold">AI</span>
+          </p>
+        </div>
+
+        <!-- Supporting paragraph -->
+        <div class="overflow-hidden mt-5">
+          <p id="heroPara" class="hero-reveal text-sm sm:text-[0.9rem] font-semibold leading-relaxed text-white max-w-lg mx-auto" style="font-family:'DM Sans',sans-serif;">
+            We partner with forward-thinking companies to architect intelligent systems, automate critical workflows, and unlock growth that was never possible before.
+          </p>
+        </div>
+
+        <div class="overflow-hidden mt-7">
+          <a id="heroCta" href="#" class="hero-reveal inline-flex items-center gap-2 text-sm font-bold text-black tracking-wide group" style="font-family:'DM Sans',sans-serif;">
+            <span class="border-b border-black/50 pb-0.5 group-hover:border-black transition-colors">Explore what we build</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div id="scrollHint" class="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-hint">
+        <div class="flex flex-col items-center gap-2 text-white font-bold">
+          <span class="text-xs tracking-widest uppercase" style="font-family:'DM Sans',sans-serif;">Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+
+      </div><!-- /.puzzle-hero__sticky -->
+    </section>
+
+
+    <!-- ── ANIMATED COLOR TRANSITION ── -->
+    <div class="color-shift" aria-hidden="true">
+      <!-- Animated gradient blobs -->
+      <div class="color-shift__blob color-shift__blob--1"></div>
+      <div class="color-shift__blob color-shift__blob--2"></div>
+      <div class="color-shift__blob color-shift__blob--3"></div>
+      <!-- Base gradient sweep -->
+      <div class="color-shift__sweep"></div>
+      <!-- Animated wave edge -->
+      <svg class="color-shift__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path class="color-shift__wave-path color-shift__wave-path--1" d="M0 60 C240 10, 480 100, 720 40 S1200 90, 1440 50 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.6"/>
+        <path class="color-shift__wave-path color-shift__wave-path--2" d="M0 80 C360 30, 720 110, 1080 50 S1440 80, 1440 80 L1440 120 L0 120Z" fill="#faf5ff" opacity="0.8"/>
+        <path class="color-shift__wave-path color-shift__wave-path--3" d="M0 95 C480 60, 960 120, 1440 90 L1440 120 L0 120Z" fill="#faf5ff"/>
+      </svg>
+    </div>
+
+    <!-- ── SECTION 2 — Deep purple with AI card ── -->
+    <section class="section-dark relative px-8 sm:px-12 md:px-20 lg:px-28">
+      <div class="section-dark__inner min-h-screen flex items-center justify-center py-24">
+
+        <div id="aiCard" class="ai-card scroll-reveal text-center max-w-2xl">
+
+          <!-- AI Logo -->
+          <div class="ai-card__icon" style="justify-content:center;">
+            <svg width="88" height="88" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="aiGrad" x1="0" y1="80" x2="80" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#06b6d4"/>
+                  <stop offset="50%" stop-color="#8b5cf6"/>
+                  <stop offset="100%" stop-color="#c084fc"/>
+                </linearGradient>
+              </defs>
+              <path d="M56 4H20C11.16 4 4 11.16 4 20v40c0 8.84 7.16 16 16 16h40c8.84 0 16-7.16 16-16V28" stroke="url(#aiGrad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <text x="26" y="55" font-family="'DM Sans', sans-serif" font-weight="700" font-size="30" fill="url(#aiGrad)">AI</text>
+              <path d="M64 4 L66 10 L72 12 L66 14 L64 20 L62 14 L56 12 L62 10Z" fill="url(#aiGrad)"/>
+              <path d="M72 20 L73 23 L76 24 L73 25 L72 28 L71 25 L68 24 L71 23Z" fill="url(#aiGrad)" opacity="0.7"/>
+            </svg>
+          </div>
+
+          <!-- AI heading -->
+          <h2 class="ai-card__title" style="color:#1f2937; margin-bottom:16px;">
+            <span class="ai-word">Has</span>
+            <span class="ai-word">Your</span>
+            <span class="ai-word">Business</span>
+            <span class="ai-word">Ever</span>
+            <span class="ai-word">Considered</span>
+            <span class="ai-word ai-word--glow">AI?</span>
+          </h2>
+
+          <!-- AI body text -->
+          <p class="ai-card__body" style="color:#6b7280; text-align:center; max-width:32rem; margin-left:auto; margin-right:auto;">
+            <span class="ai-line">The businesses that will lead tomorrow are</span>
+            <span class="ai-line">the ones automating and transforming today.</span>
+            <span class="ai-line">We bring enterprise-grade artificial intelligence</span>
+            <span class="ai-line">directly into your operations — eliminating</span>
+            <span class="ai-line">bottlenecks, reducing costs, and unlocking</span>
+            <span class="ai-line">revenue streams you didn't know existed.</span>
+          </p>
+
+          <!-- AI CTA -->
+          <a href="#" class="ai-card__cta">
+            <span>See How It Works</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
