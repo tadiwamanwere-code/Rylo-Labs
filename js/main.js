@@ -46,27 +46,71 @@
     var heroLine = document.getElementById('heroLine');
     if (heroLine) setTimeout(function () { heroLine.classList.add('visible'); }, 900);
 
-    var heroWords = document.querySelectorAll('.hero-word');
-    heroWords.forEach(function (w, i) {
-      setTimeout(function () { w.classList.add('visible'); }, 1100 + i * 130);
-    });
-
-    var subWords = document.querySelectorAll('.hero-word-sub');
-    var subStart = 1100 + heroWords.length * 130 + 250;
-    subWords.forEach(function (w, i) {
-      setTimeout(function () { w.classList.add('visible'); }, subStart + i * 90);
-    });
-
+    /* Slideshow first slide is already active — reveal CTA + hint */
     var heroCta = document.getElementById('heroCta');
-    var ctaDelay = subStart + subWords.length * 90 + 300;
-    if (heroCta) setTimeout(function () { heroCta.classList.add('visible'); }, ctaDelay);
+    if (heroCta) setTimeout(function () { heroCta.classList.add('visible'); }, 1400);
 
     var scrollHint = document.getElementById('scrollHint');
-    if (scrollHint) setTimeout(function () { scrollHint.classList.add('visible'); }, ctaDelay + 400);
+    if (scrollHint) setTimeout(function () { scrollHint.classList.add('visible'); }, 1800);
+
+    /* Start the slideshow after entrance finishes */
+    setTimeout(startSlideshow, 2200);
   }
 
   if (document.readyState === 'complete') runEntrance();
   else window.addEventListener('load', runEntrance);
+
+
+  /* ═══════════════════════════════════════
+     HERO TEXT SLIDESHOW
+     Auto-cycles every 4s with animated
+     transitions between slides.
+     ═══════════════════════════════════════ */
+  var slides = document.querySelectorAll('.hero-slide');
+  var dots   = document.querySelectorAll('.hero-dot');
+  var currentSlide = 0;
+  var slideInterval = null;
+
+  function goToSlide(index) {
+    if (index === currentSlide || !slides.length) return;
+
+    /* Exit current */
+    slides[currentSlide].classList.remove('hero-slide--active');
+    slides[currentSlide].classList.add('hero-slide--exit');
+    dots[currentSlide].classList.remove('hero-dot--active');
+
+    /* After exit transition, remove exit class */
+    var prev = currentSlide;
+    setTimeout(function () {
+      slides[prev].classList.remove('hero-slide--exit');
+    }, 700);
+
+    /* Enter new */
+    currentSlide = index;
+    slides[currentSlide].classList.add('hero-slide--active');
+    dots[currentSlide].classList.add('hero-dot--active');
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }
+
+  function startSlideshow() {
+    if (slides.length < 2) return;
+    slideInterval = setInterval(nextSlide, 4000);
+  }
+
+  /* Dot click */
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      var idx = parseInt(this.getAttribute('data-slide'), 10);
+      if (idx !== currentSlide) {
+        clearInterval(slideInterval);
+        goToSlide(idx);
+        slideInterval = setInterval(nextSlide, 4000);
+      }
+    });
+  });
 
 
   /* ═══════════════════════════════════════
