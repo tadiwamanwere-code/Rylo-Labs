@@ -30,16 +30,8 @@
 </head>
 <body>
 
-  <!-- ═══ FIXED PURPLE BACKGROUND ═══ -->
-  <div class="fixed inset-0" style="z-index:0;">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#1a0533] via-[#2d0a4e] to-[#1a0533]"></div>
-    <div class="orb absolute w-[600px] h-[600px] rounded-full bg-purple-700/20 blur-[120px] -top-40 -right-40 animate-float-slow"></div>
-    <div class="orb absolute w-[400px] h-[400px] rounded-full bg-purple-600/15 blur-[100px] bottom-0 left-[-10%] animate-float-mid"></div>
-    <div class="orb absolute w-[300px] h-[300px] rounded-full bg-violet-500/10 blur-[80px] top-1/2 left-1/2 animate-float-fast"></div>
-  </div>
-
   <!-- ═══════ NAVBAR ═══════ -->
-  <nav id="navbar" class="topnav topnav--dark fixed top-0 left-0 right-0 z-50">
+  <nav id="navbar" class="topnav fixed top-0 left-0 right-0 z-50">
     <div class="topnav__inner">
       <a href="#home" class="topnav__logo">
         <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;">.</span>
@@ -64,12 +56,12 @@
   <!-- ═══════════════════════════════════════════
        SINGLE-PAGE SCROLLABLE CONTENT
        ═══════════════════════════════════════════ -->
-  <main class="relative" style="z-index:5;">
+  <main class="relative">
 
     <!-- ══════════════════════════════════
          SECTION 1 — HERO
          ══════════════════════════════════ -->
-    <section id="home" class="hero-section relative px-8 sm:px-12 md:px-20 lg:px-28">
+    <section id="home" class="hero-section relative px-8 sm:px-12 md:px-20 lg:px-28" style="background:linear-gradient(180deg,#faf5ff,#fff);">
       <div id="hero" class="select-none text-center max-w-3xl mx-auto">
 
         <div class="hero-line overflow-hidden flex justify-center">
@@ -77,9 +69,9 @@
             <svg class="hero-flask" width="52" height="68" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="heroFlaskGrad" x1="10" y1="64" x2="38" y2="0" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#c084fc"/>
-                  <stop offset="50%" stop-color="#d8b4fe"/>
-                  <stop offset="100%" stop-color="#e9d5ff"/>
+                  <stop offset="0%" stop-color="#7e22ce"/>
+                  <stop offset="50%" stop-color="#9333ea"/>
+                  <stop offset="100%" stop-color="#a855f7"/>
                 </linearGradient>
               </defs>
               <path d="M19 6v18L6 54c-2 4 1 8 5 8h26c4 0 7-4 5-8L29 24V6" stroke="url(#heroFlaskGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -89,12 +81,12 @@
               <circle class="flask-bubble flask-bubble--2" cx="28" cy="-8" r="1.5" stroke="url(#heroFlaskGrad)" stroke-width="1" fill="none" opacity="0.25"/>
               <circle class="flask-bubble flask-bubble--3" cx="24" cy="-15" r="1" stroke="url(#heroFlaskGrad)" stroke-width="0.8" fill="none" opacity="0.18"/>
             </svg>
-            <span class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white" style="font-family:'Playfair Display',serif;">Rylo <span class="font-bold text-purple-300">Labs</span></span>
+            <span class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-gray-900" style="font-family:'Playfair Display',serif;">Rylo <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Labs</span></span>
           </div>
         </div>
 
         <div class="overflow-hidden mt-4 mb-3 flex justify-center">
-          <div id="heroLine" class="hero-accent-line w-14 h-[2px] bg-gradient-to-r from-purple-400 to-purple-600" style="transform-origin:center;"></div>
+          <div id="heroLine" class="hero-accent-line w-14 h-[2px] bg-gradient-to-r from-blue-400 to-purple-500" style="transform-origin:center;"></div>
         </div>
 
         <!-- ═══ TEXT SLIDESHOW ═══ -->
@@ -102,11 +94,11 @@
 
           <!-- Slide 1: Tagline -->
           <div class="hero-slide hero-slide--active">
-            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-white/90" style="font-family:'DM Sans',sans-serif;">
-              Pioneering the Next Wave of Innovation <span class="text-purple-400">Across Africa</span>
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-gray-800" style="font-family:'DM Sans',sans-serif;">
+              Pioneering the Next Wave of Innovation <span class="text-purple-600">Across Africa</span>
             </p>
-            <p class="text-sm sm:text-base font-light text-purple-200/60 mt-3" style="font-family:'DM Sans',sans-serif;">
-              Scaling organisations through intelligent <span class="font-semibold text-purple-200">Software</span> &amp; <span class="font-semibold text-purple-200">AI</span>
+            <p class="text-sm sm:text-base font-light text-gray-500 mt-3" style="font-family:'DM Sans',sans-serif;">
+              Scaling organisations through intelligent <span class="font-semibold text-gray-700">Software</span> &amp; <span class="font-semibold text-gray-700">AI</span>
             </p>
           </div>
 
@@ -127,30 +119,30 @@
                 <path d="M72 20 L73 23 L76 24 L73 25 L72 28 L71 25 L68 24 L71 23Z" fill="url(#aiGradHero)" opacity="0.7"/>
               </svg>
             </div>
-            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-white/90" style="font-family:'DM Sans',sans-serif;">
-              Has Your Business Ever Considered <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-purple-500">AI?</span>
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-gray-800" style="font-family:'DM Sans',sans-serif;">
+              Has Your Business Ever Considered <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600">AI?</span>
             </p>
-            <p class="text-sm sm:text-base font-light text-purple-200/60 mt-3 max-w-md mx-auto" style="font-family:'DM Sans',sans-serif;">
+            <p class="text-sm sm:text-base font-light text-gray-500 mt-3 max-w-md mx-auto" style="font-family:'DM Sans',sans-serif;">
               The businesses that will lead tomorrow are the ones automating and transforming today.
             </p>
           </div>
 
           <!-- Slide 3: What we do -->
           <div class="hero-slide">
-            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-white/90" style="font-family:'DM Sans',sans-serif;">
-              We Build <span class="text-purple-400">Intelligent Systems</span> That Work
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-gray-800" style="font-family:'DM Sans',sans-serif;">
+              We Build <span class="text-purple-600">Intelligent Systems</span> That Work
             </p>
-            <p class="text-sm sm:text-base font-light text-purple-200/60 mt-3 max-w-md mx-auto" style="font-family:'DM Sans',sans-serif;">
+            <p class="text-sm sm:text-base font-light text-gray-500 mt-3 max-w-md mx-auto" style="font-family:'DM Sans',sans-serif;">
               From custom software to AI-powered analytics — we architect solutions that unlock growth.
             </p>
           </div>
 
           <!-- Slide 4: Impact -->
           <div class="hero-slide">
-            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-white/90" style="font-family:'DM Sans',sans-serif;">
-              <span class="text-purple-400">50+</span> Clients &middot; <span class="text-purple-400">8</span> Countries &middot; <span class="text-purple-400">200+</span> Projects
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] font-semibold leading-snug text-gray-800" style="font-family:'DM Sans',sans-serif;">
+              <span class="text-purple-600">50+</span> Clients &middot; <span class="text-purple-600">8</span> Countries &middot; <span class="text-purple-600">200+</span> Projects
             </p>
-            <p class="text-sm sm:text-base font-light text-purple-200/60 mt-3 max-w-md mx-auto" style="font-family:'DM Sans',sans-serif;">
+            <p class="text-sm sm:text-base font-light text-gray-500 mt-3 max-w-md mx-auto" style="font-family:'DM Sans',sans-serif;">
               Trusted by forward-thinking companies across the African continent.
             </p>
           </div>
@@ -166,15 +158,15 @@
         </div>
 
         <div class="overflow-hidden mt-7">
-          <a id="heroCta" href="#products" class="hero-reveal inline-flex items-center gap-2 text-sm font-medium text-purple-300 tracking-wide group" style="font-family:'DM Sans',sans-serif;">
-            <span class="border-b border-purple-400/50 pb-0.5 group-hover:border-purple-300 transition-colors">Explore what we build</span>
+          <a id="heroCta" href="#products" class="hero-reveal inline-flex items-center gap-2 text-sm font-medium text-purple-600 tracking-wide group" style="font-family:'DM Sans',sans-serif;">
+            <span class="border-b border-purple-400/50 pb-0.5 group-hover:border-purple-600 transition-colors">Explore what we build</span>
             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
       </div>
 
       <div id="scrollHint" class="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-hint">
-        <div class="flex flex-col items-center gap-2 text-purple-300/60">
+        <div class="flex flex-col items-center gap-2 text-gray-400">
           <span class="text-xs tracking-widest uppercase" style="font-family:'DM Sans',sans-serif;">Scroll</span>
           <div class="scroll-line"></div>
         </div>
@@ -182,165 +174,80 @@
     </section>
 
 
-    <!-- ── TRANSITION 1: Dark → Light (rising color morph) ── -->
-    <div class="color-morph" aria-hidden="true">
-      <div class="color-morph__from" style="background:#1a0533;"></div>
-      <div class="color-morph__rising" style="background:linear-gradient(to top, #faf5ff 0%, #e9d5ff 25%, #c084fc 50%, #7e22ce 75%, transparent 100%);"></div>
-    </div>
-
-
     <!-- ══════════════════════════════════
          SECTION 2 — PRODUCTS (Lux Tutor)
          ══════════════════════════════════ -->
-    <section id="products" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-24" style="background:linear-gradient(180deg,#faf5ff,#fff,#faf5ff);">
+    <section id="products" class="relative px-6 sm:px-12 md:px-20 lg:px-28 py-28" style="background:linear-gradient(180deg,#faf5ff,#fff 40%,#fff 60%,#faf5ff);">
       <div class="max-w-6xl mx-auto">
 
         <!-- Header -->
-        <div class="text-center mb-6 scroll-reveal">
+        <div class="text-center mb-16 scroll-reveal">
           <span class="eyebrow">Featured Product</span>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3" style="font-family:'Playfair Display',serif;">Lux <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Tutor</span></h2>
-          <p class="text-gray-500 max-w-xl mx-auto mt-4 text-sm sm:text-base leading-relaxed" style="font-family:'DM Sans',sans-serif;">An AI-powered tutoring platform that personalises learning for every student across Africa.</p>
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mt-4 tracking-tight" style="font-family:'Playfair Display',serif;">Lux <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Tutor</span></h2>
+          <p class="text-gray-500 max-w-2xl mx-auto mt-5 text-base sm:text-lg leading-relaxed tracking-wide" style="font-family:'DM Sans',sans-serif;">An AI-powered tutoring platform that personalises learning for every student across Africa.</p>
         </div>
 
-        <!-- App mockup showcase -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-14" data-stagger="150">
-
-          <!-- Card 1: Dashboard -->
-          <div class="app-mockup stagger-child scroll-reveal">
-            <div class="app-mockup__screen">
-              <div class="app-mockup__bar">
-                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
-                <span class="app-mockup__dot" style="background:#febc2e;"></span>
-                <span class="app-mockup__dot" style="background:#28c840;"></span>
-                <span class="app-mockup__bar-title">Dashboard</span>
-              </div>
-              <div class="app-mockup__body" style="padding:1.2rem;">
-                <p class="text-xs font-semibold text-gray-800" style="font-family:'DM Sans',sans-serif;">Good morning, Tadiwa</p>
-                <p class="text-[10px] text-gray-400 mt-0.5">Your Tutor &bull; Medicine</p>
-                <div class="flex gap-3 mt-3">
-                  <div class="flex-1 rounded-lg bg-blue-50 p-2 text-center"><span class="text-lg font-bold text-blue-600">0</span><br><span class="text-[9px] text-gray-400">Saved</span></div>
-                  <div class="flex-1 rounded-lg bg-blue-50 p-2 text-center"><span class="text-lg font-bold text-blue-600">0</span><br><span class="text-[9px] text-gray-400">Streak</span></div>
-                  <div class="flex-1 rounded-lg bg-blue-50 p-2 text-center"><span class="text-lg font-bold text-blue-600">25%</span><br><span class="text-[9px] text-gray-400">Progress</span></div>
-                </div>
-                <div class="mt-3 rounded-lg bg-gray-50 p-2">
-                  <p class="text-[10px] font-semibold text-gray-700">Today's goals</p>
-                  <div class="flex items-center gap-1.5 mt-1"><div class="w-2.5 h-2.5 rounded-full bg-blue-400"></div><span class="text-[9px] text-gray-500">Complete a study session</span></div>
-                  <div class="flex items-center gap-1.5 mt-1"><div class="w-2.5 h-2.5 rounded-full bg-gray-200"></div><span class="text-[9px] text-gray-500">Maintain your study streak</span></div>
-                </div>
-              </div>
+        <!-- Screenshot showcase — hero feature -->
+        <div class="showcase-hero scroll-reveal mb-16">
+          <div class="showcase-card showcase-card--hero group">
+            <div class="showcase-card__glow"></div>
+            <div class="showcase-card__inner">
+              <img src="images/lux-dashboard.png" alt="Lux Tutor Dashboard — personalised learning overview" class="showcase-card__img" loading="lazy"/>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">Smart Dashboard</h3>
-            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Track goals, streaks, and learning progress with a personalised overview.</p>
+            <div class="showcase-card__reflection"></div>
+          </div>
+          <div class="text-center mt-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight" style="font-family:'Playfair Display',serif;">Smart Dashboard</h3>
+            <p class="text-gray-500 mt-2 text-sm sm:text-base max-w-lg mx-auto" style="font-family:'DM Sans',sans-serif;">Track goals, streaks, and learning progress with a personalised overview built around you.</p>
+          </div>
+        </div>
+
+        <!-- Screenshot grid — 3 features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-stagger="120">
+
+          <!-- Study Prep -->
+          <div class="scroll-reveal stagger-child">
+            <div class="showcase-card group">
+              <div class="showcase-card__glow"></div>
+              <div class="showcase-card__inner">
+                <img src="images/lux-studyprep.png" alt="Lux Tutor Study Prep — multiple study modes" class="showcase-card__img" loading="lazy"/>
+              </div>
+              <div class="showcase-card__reflection"></div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-bold text-gray-900 tracking-tight" style="font-family:'Playfair Display',serif;">Multi-Mode Study Prep</h3>
+              <p class="text-gray-500 mt-1.5 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">Presentations, podcasts, flashcards, and diagrams — learn any way you want.</p>
+            </div>
           </div>
 
-          <!-- Card 2: Study Prep -->
-          <div class="app-mockup stagger-child scroll-reveal">
-            <div class="app-mockup__screen">
-              <div class="app-mockup__bar">
-                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
-                <span class="app-mockup__dot" style="background:#febc2e;"></span>
-                <span class="app-mockup__dot" style="background:#28c840;"></span>
-                <span class="app-mockup__bar-title">Study Prep</span>
+          <!-- AI Chat -->
+          <div class="scroll-reveal stagger-child">
+            <div class="showcase-card group">
+              <div class="showcase-card__glow"></div>
+              <div class="showcase-card__inner">
+                <img src="images/lux-chat.png" alt="Lux Tutor AI Chat — ask anything" class="showcase-card__img" loading="lazy"/>
               </div>
-              <div class="app-mockup__body" style="padding:1.2rem;">
-                <p class="text-[10px] text-center text-gray-400 mb-1">Choose your study mode</p>
-                <p class="text-xs font-bold text-center text-gray-800 mb-3" style="font-family:'Playfair Display',serif;">Study Prep</p>
-                <div class="grid grid-cols-2 gap-2">
-                  <div class="rounded-lg border border-gray-100 p-3 bg-white hover:shadow-md transition-shadow">
-                    <div class="w-6 h-6 rounded bg-blue-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-                    <p class="text-[10px] font-semibold text-gray-800">Presentation</p>
-                    <p class="text-[8px] text-gray-400">Study slides</p>
-                  </div>
-                  <div class="rounded-lg border border-gray-100 p-3 bg-white">
-                    <div class="w-6 h-6 rounded bg-orange-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
-                    <p class="text-[10px] font-semibold text-gray-800">Podcast</p>
-                    <p class="text-[8px] text-gray-400">Listen & learn</p>
-                  </div>
-                  <div class="rounded-lg border border-gray-100 p-3 bg-white">
-                    <div class="w-6 h-6 rounded bg-green-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 4v16"/></svg></div>
-                    <p class="text-[10px] font-semibold text-gray-800">Flashcards</p>
-                    <p class="text-[8px] text-gray-400">Test knowledge</p>
-                  </div>
-                  <div class="rounded-lg border border-gray-100 p-3 bg-white">
-                    <div class="w-6 h-6 rounded bg-purple-100 flex items-center justify-center mb-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
-                    <p class="text-[10px] font-semibold text-gray-800">Diagram</p>
-                    <p class="text-[8px] text-gray-400">Visualise concepts</p>
-                  </div>
-                </div>
-              </div>
+              <div class="showcase-card__reflection"></div>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">Multi-Mode Study Prep</h3>
-            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Presentations, podcasts, flashcards, and diagrams — learn any way you want.</p>
+            <div class="mt-6">
+              <h3 class="text-lg font-bold text-gray-900 tracking-tight" style="font-family:'Playfair Display',serif;">AI Tutor Chat</h3>
+              <p class="text-gray-500 mt-1.5 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">Ask any question and get instant, personalised explanations powered by AI.</p>
+            </div>
           </div>
 
-          <!-- Card 3: AI Chat -->
-          <div class="app-mockup stagger-child scroll-reveal">
-            <div class="app-mockup__screen">
-              <div class="app-mockup__bar">
-                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
-                <span class="app-mockup__dot" style="background:#febc2e;"></span>
-                <span class="app-mockup__dot" style="background:#28c840;"></span>
-                <span class="app-mockup__bar-title">Lux Chat</span>
+          <!-- Community -->
+          <div class="scroll-reveal stagger-child">
+            <div class="showcase-card group">
+              <div class="showcase-card__glow"></div>
+              <div class="showcase-card__inner">
+                <img src="images/lux-community.png" alt="Lux Tutor Community — connect with learners" class="showcase-card__img" loading="lazy"/>
               </div>
-              <div class="app-mockup__body flex flex-col items-center justify-center" style="padding:2rem 1.2rem;">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                </div>
-                <p class="text-sm font-bold text-gray-800 text-center" style="font-family:'Playfair Display',serif;">What can I help you study?</p>
-                <div class="w-full mt-4 rounded-full bg-gray-100 px-4 py-2 flex items-center gap-2">
-                  <span class="text-gray-300 text-xs">+</span>
-                  <span class="text-[10px] text-gray-400 flex-1">Ask anything</span>
-                  <span class="text-[8px] font-bold text-white bg-gray-900 rounded px-1.5 py-0.5">Fast</span>
-                </div>
-                <div class="flex gap-3 mt-3">
-                  <span class="text-[8px] text-gray-400">Visuals</span>
-                  <span class="text-[8px] text-gray-400">Podcast</span>
-                  <span class="text-[8px] text-gray-400">Exam</span>
-                  <span class="text-[8px] text-gray-400">Clear</span>
-                </div>
-              </div>
+              <div class="showcase-card__reflection"></div>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">AI Tutor Chat</h3>
-            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Ask any question and get instant, personalised explanations powered by AI.</p>
-          </div>
-
-          <!-- Card 4: Community -->
-          <div class="app-mockup stagger-child scroll-reveal">
-            <div class="app-mockup__screen">
-              <div class="app-mockup__bar">
-                <span class="app-mockup__dot" style="background:#ff5f57;"></span>
-                <span class="app-mockup__dot" style="background:#febc2e;"></span>
-                <span class="app-mockup__dot" style="background:#28c840;"></span>
-                <span class="app-mockup__bar-title">Community</span>
-              </div>
-              <div class="app-mockup__body" style="padding:1rem;">
-                <div class="flex gap-2 mb-3 justify-center">
-                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">Feed</span>
-                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-blue-500 text-white font-semibold">People</span>
-                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">Messages</span>
-                  <span class="text-[9px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">Groups</span>
-                </div>
-                <div class="space-y-2">
-                  <div class="flex items-center gap-2 rounded-lg bg-white border border-gray-100 p-2">
-                    <div class="w-7 h-7 rounded-full bg-gray-300 flex items-center justify-center text-[8px] font-bold text-white">A</div>
-                    <div class="flex-1"><p class="text-[9px] font-semibold text-gray-800">Areto</p><p class="text-[7px] text-gray-400">Student &bull; A Level</p></div>
-                    <span class="text-[7px] px-1.5 py-0.5 rounded bg-blue-500 text-white">Add</span>
-                  </div>
-                  <div class="flex items-center gap-2 rounded-lg bg-white border border-gray-100 p-2">
-                    <div class="w-7 h-7 rounded-full bg-blue-400 flex items-center justify-center text-[8px] font-bold text-white">CM</div>
-                    <div class="flex-1"><p class="text-[9px] font-semibold text-gray-800">Chalse Morgan</p><p class="text-[7px] text-gray-400">Facilitator &bull; O Level</p></div>
-                    <span class="text-[7px] px-1.5 py-0.5 rounded bg-blue-500 text-white">Add</span>
-                  </div>
-                  <div class="flex items-center gap-2 rounded-lg bg-white border border-gray-100 p-2">
-                    <div class="w-7 h-7 rounded-full bg-gray-500 flex items-center justify-center text-[8px] font-bold text-white">WM</div>
-                    <div class="flex-1"><p class="text-[9px] font-semibold text-gray-800">Wil Manwere</p><p class="text-[7px] text-gray-400">Student &bull; University</p></div>
-                    <span class="text-[7px] px-1.5 py-0.5 rounded bg-blue-500 text-white">Add</span>
-                  </div>
-                </div>
-              </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-bold text-gray-900 tracking-tight" style="font-family:'Playfair Display',serif;">Learning Community</h3>
+              <p class="text-gray-500 mt-1.5 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">Connect with students, facilitators, and study groups across Africa.</p>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-5" style="font-family:'Playfair Display',serif;">Learning Community</h3>
-            <p class="text-sm text-gray-500 mt-1" style="font-family:'DM Sans',sans-serif;">Connect with students, facilitators, and study groups across Africa.</p>
           </div>
 
         </div>
@@ -348,40 +255,33 @@
     </section>
 
 
-    <!-- ── TRANSITION 2: Light → Dark (rising color morph) ── -->
-    <div class="color-morph" aria-hidden="true">
-      <div class="color-morph__from" style="background:#faf5ff;"></div>
-      <div class="color-morph__rising" style="background:linear-gradient(to top, #1a0533 0%, #2d0a4e 25%, #581c87 50%, #7e22ce 75%, transparent 100%);"></div>
-    </div>
-
-
     <!-- ══════════════════════════════════
          SECTION 3 — ABOUT
          ══════════════════════════════════ -->
-    <section id="about" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-24" style="background:#1a0533;">
+    <section id="about" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-28" style="background:linear-gradient(180deg,#fff,#faf5ff,#fff);">
       <div class="max-w-5xl mx-auto">
 
         <div class="text-center mb-16 scroll-reveal">
-          <span class="eyebrow" style="color:#c084fc;">About Us</span>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3" style="font-family:'Playfair Display',serif;">Built in Africa, <span class="text-purple-400">for Africa</span></h2>
-          <p class="text-purple-200/60 max-w-2xl mx-auto mt-4 text-base leading-relaxed" style="font-family:'DM Sans',sans-serif;">Founded with a mission to bring world-class technology to African enterprises, we bridge the gap between cutting-edge AI and real-world business challenges.</p>
+          <span class="eyebrow">About Us</span>
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mt-4 tracking-tight" style="font-family:'Playfair Display',serif;">Built in Africa, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">for Africa</span></h2>
+          <p class="text-gray-500 max-w-2xl mx-auto mt-5 text-base sm:text-lg leading-relaxed" style="font-family:'DM Sans',sans-serif;">Founded with a mission to bring world-class technology to African enterprises, we bridge the gap between cutting-edge AI and real-world business challenges.</p>
         </div>
 
         <!-- Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20" data-stagger="120">
-          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="50" data-suffix="+">
+          <div class="stat-counter stagger-child scroll-reveal text-center" data-target="50" data-suffix="+">
             <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
             <span class="stat-counter__label">Clients</span>
           </div>
-          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="8">
+          <div class="stat-counter stagger-child scroll-reveal text-center" data-target="8">
             <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
             <span class="stat-counter__label">Countries</span>
           </div>
-          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="200" data-suffix="+">
+          <div class="stat-counter stagger-child scroll-reveal text-center" data-target="200" data-suffix="+">
             <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
             <span class="stat-counter__label">Projects</span>
           </div>
-          <div class="stat-counter stat-counter--dark stagger-child scroll-reveal text-center" data-target="99" data-suffix="%">
+          <div class="stat-counter stagger-child scroll-reveal text-center" data-target="99" data-suffix="%">
             <span class="stat-counter__number" style="font-family:'Playfair Display',serif;">0</span>
             <span class="stat-counter__label">Uptime</span>
           </div>
@@ -389,13 +289,13 @@
 
         <!-- Mission / Vision -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10" data-stagger="150">
-          <div class="scroll-reveal stagger-child rounded-2xl p-8" style="background:rgba(139,92,246,0.08);border:1px solid rgba(192,132,252,0.1);">
-            <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Playfair Display',serif;">Our Mission</h3>
-            <p class="text-purple-200/60 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">To empower African businesses with intelligent technology that drives measurable growth and lasting impact across the continent.</p>
+          <div class="scroll-reveal stagger-child rounded-2xl p-8 bg-white border border-gray-100" style="box-shadow:0 4px 24px rgba(0,0,0,0.04);">
+            <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:'Playfair Display',serif;">Our Mission</h3>
+            <p class="text-gray-500 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">To empower African businesses with intelligent technology that drives measurable growth and lasting impact across the continent.</p>
           </div>
-          <div class="scroll-reveal stagger-child rounded-2xl p-8" style="background:rgba(139,92,246,0.08);border:1px solid rgba(192,132,252,0.1);">
-            <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Playfair Display',serif;">Our Vision</h3>
-            <p class="text-purple-200/60 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">A continent where every organization has access to world-class AI and software solutions, regardless of size or sector.</p>
+          <div class="scroll-reveal stagger-child rounded-2xl p-8 bg-white border border-gray-100" style="box-shadow:0 4px 24px rgba(0,0,0,0.04);">
+            <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:'Playfair Display',serif;">Our Vision</h3>
+            <p class="text-gray-500 text-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">A continent where every organization has access to world-class AI and software solutions, regardless of size or sector.</p>
           </div>
         </div>
 
@@ -403,17 +303,10 @@
     </section>
 
 
-    <!-- ── TRANSITION 3: Dark → Light (rising color morph) ── -->
-    <div class="color-morph" aria-hidden="true">
-      <div class="color-morph__from" style="background:#1a0533;"></div>
-      <div class="color-morph__rising" style="background:linear-gradient(to top, #faf5ff 0%, #e9d5ff 25%, #c084fc 50%, #7e22ce 75%, transparent 100%);"></div>
-    </div>
-
-
     <!-- ══════════════════════════════════
          SECTION 4 — CONTACT
          ══════════════════════════════════ -->
-    <section id="contact" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-24" style="background:linear-gradient(180deg,#faf5ff,#fff);">
+    <section id="contact" class="relative px-8 sm:px-12 md:px-20 lg:px-28 py-28" style="background:linear-gradient(180deg,#fff,#faf5ff);">
       <div class="max-w-3xl mx-auto">
 
         <div class="text-center mb-12 scroll-reveal">
@@ -466,16 +359,6 @@
     </section>
 
 
-    <!-- ── Footer transition ── -->
-    <div class="footer-transition" aria-hidden="true">
-      <div class="footer-transition__sweep"></div>
-      <svg class="footer-transition__wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0 60 C240 10,480 100,720 40 S1200 90,1440 50 L1440 120 L0 120Z" fill="#1a0533" opacity="0.6"/>
-        <path d="M0 80 C360 30,720 110,1080 50 S1440 80,1440 80 L1440 120 L0 120Z" fill="#1a0533" opacity="0.8"/>
-        <path d="M0 95 C480 60,960 120,1440 90 L1440 120 L0 120Z" fill="#1a0533"/>
-      </svg>
-    </div>
-
   </main>
 
 
@@ -485,7 +368,7 @@
       <div class="site-footer__grid">
         <div class="footer-col">
           <a href="#home" class="topnav__logo" style="margin-bottom:1rem;display:inline-flex;">
-            <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;color:#f3e8ff;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;color:#c084fc;">.</span>
+            <span class="topnav__logo-text" style="font-family:'Playfair Display',serif;">Rylo</span><span class="topnav__logo-dot" style="font-family:'Playfair Display',serif;">.</span>
           </a>
           <p class="footer-desc">Pioneering the next wave of innovation across Africa through intelligent software &amp; AI solutions.</p>
         </div>

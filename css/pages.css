@@ -602,21 +602,7 @@
   background: linear-gradient(90deg, #9333ea, #c084fc);
 }
 
-/* Dark background variant */
-.stat-counter--dark .stat-counter__number {
-  color: #ffffff;
-}
-
-.stat-counter--dark .stat-counter__number .accent {
-  background: linear-gradient(135deg, #c084fc, #d8b4fe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.stat-counter--dark .stat-counter__label {
-  color: rgba(255, 255, 255, 0.6);
-}
+/* (dark stat-counter variant removed — unified light theme) */
 
 
 /* ═══════════════════════════════════════
@@ -879,8 +865,8 @@
    ═══════════════════════════════════════ */
 
 .site-footer {
-  background: #1a0533;
-  color: #e9d5ff;
+  background: #faf5ff;
+  color: #6b7280;
   padding: 4rem 2rem 0;
   position: relative;
   overflow: hidden;
@@ -893,13 +879,13 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(168, 85, 247, 0.15) 15%,
-    rgba(147, 51, 234, 0.5) 50%,
-    rgba(168, 85, 247, 0.15) 85%,
+    rgba(168, 85, 247, 0.1) 15%,
+    rgba(147, 51, 234, 0.25) 50%,
+    rgba(168, 85, 247, 0.1) 85%,
     transparent 100%
   );
 }
@@ -933,21 +919,21 @@
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #1f2937;
   text-decoration: none;
   display: inline-block;
   margin-bottom: 1rem;
 }
 
 .site-footer__logo .dot {
-  color: #c084fc;
+  color: #9333ea;
 }
 
 .site-footer__tagline {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   line-height: 1.7;
-  color: rgba(233, 213, 255, 0.65);
+  color: #9ca3af;
 }
 
 /* Link columns */
@@ -957,7 +943,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: #9ca3af;
   margin-bottom: 1.25rem;
 }
 
@@ -973,18 +959,18 @@
 .site-footer__links a {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.875rem;
-  color: #d8b4fe;
+  color: #6b7280;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .site-footer__links a:hover {
-  color: #ffffff;
+  color: #9333ea;
 }
 
 /* Copyright bar */
 .site-footer__bottom {
-  border-top: 1px solid rgba(168, 85, 247, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
@@ -1004,7 +990,7 @@
 .site-footer__copy {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.8rem;
-  color: rgba(233, 213, 255, 0.45);
+  color: #9ca3af;
 }
 
 .site-footer__social {
@@ -1020,13 +1006,13 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  color: rgba(233, 213, 255, 0.5);
+  color: #9ca3af;
   transition: color 0.3s ease, background 0.3s ease;
 }
 
 .site-footer__social a:hover {
-  color: #ffffff;
-  background: rgba(168, 85, 247, 0.15);
+  color: #9333ea;
+  background: rgba(147, 51, 234, 0.06);
 }
 
 

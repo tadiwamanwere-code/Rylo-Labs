@@ -151,20 +151,9 @@
       scrollHintEl.style.opacity = String(Math.max(0, 1 - progress * 3));
     }
 
-    /* Navbar: switch dark/light based on which section is at top */
+    /* Update active nav link */
     if (navbar) {
       var sections = document.querySelectorAll('section[id]');
-      var currentDark = false;
-      sections.forEach(function (sec) {
-        var rect = sec.getBoundingClientRect();
-        if (rect.top <= 80 && rect.bottom > 80) {
-          currentDark = sec.id === 'home' || sec.id === 'about';
-        }
-      });
-      if (currentDark) navbar.classList.add('topnav--dark');
-      else navbar.classList.remove('topnav--dark');
-
-      /* Update active link */
       var activeId = 'home';
       sections.forEach(function (sec) {
         if (sec.getBoundingClientRect().top <= vh * 0.4) activeId = sec.id;
@@ -208,5 +197,31 @@
     requestAnimationFrame(updateMorphs);
   }, { passive: true });
   updateMorphs();
+
+
+  /* ═══════════════════════════════════════
+     SHOWCASE CARDS — 3D tilt on mousemove
+     ═══════════════════════════════════════ */
+  document.querySelectorAll('.showcase-card').forEach(function (card) {
+    var inner = card.querySelector('.showcase-card__inner');
+    if (!inner) return;
+
+    var maxTilt = 6; /* degrees */
+
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width;   /* 0 → 1 */
+      var y = (e.clientY - rect.top) / rect.height;    /* 0 → 1 */
+      var rotateY = (x - 0.5) * maxTilt * 2;           /* left/right */
+      var rotateX = (0.5 - y) * maxTilt * 2;           /* up/down */
+      inner.style.transition = 'transform 0.15s ease-out, box-shadow 0.3s ease';
+      inner.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-8px) scale(1.015)';
+    });
+
+    card.addEventListener('mouseleave', function () {
+      inner.style.transition = 'transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s ease';
+      inner.style.transform = '';
+    });
+  });
 
 })();
